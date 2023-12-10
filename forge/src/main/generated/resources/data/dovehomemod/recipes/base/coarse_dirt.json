@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:green_dye"
+    },
+    "B": {
+      "tag": "forge:sandstone"
+    }
+  },
+  "pattern": [
+    "AB",
+    "BA"
+  ],
+  "result": {
+    "item": "minecraft:coarse_dirt"
+  }
+}

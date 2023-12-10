@@ -1,0 +1,16 @@
+{
+  "block.dovehomemod.cactus_thorns": "cactus thorns",
+  "block.dovehomemod.resurrected_sapling": "resurrected Sapling",
+  "block.dovehomemod.sandstone_furnace": "sandstone furnace",
+  "block.dovehomemod.sandstone_table": "Sandstone Table",
+  "blood.count": "blood staining amount is ",
+  "cactus.bloody": "bloody ",
+  "container.sandstone.furnace": "sandstone furnace",
+  "item.dovehomemod.sandstone_axe": "Sandstone Axe",
+  "item.dovehomemod.sandstone_hoe": "Sandstone Hoe",
+  "item.dovehomemod.sandstone_pickaxe": "Sandstone Pickaxe",
+  "item.dovehomemod.sandstone_shovel": "Sandstone Shovel",
+  "item.dovehomemod.sandstone_sword": "Sandstone Sword",
+  "itemGroup.dovehomemod.step1": "Step:1",
+  "sandstone.furnace.tooltip": "It's very slow"
+}

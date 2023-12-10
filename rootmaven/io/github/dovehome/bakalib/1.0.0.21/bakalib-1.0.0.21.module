@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.dovehome",
+    "module": "bakalib",
+    "version": "1.0.0.21",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "bakalib-1.0.0.21.jar",
+          "url": "bakalib-1.0.0.21.jar",
+          "size": 28221,
+          "sha512": "fecfd8cb7ed71edb3b9fd5d7c6f8fef124c55f4f29a505a2404373058d9cb621bf44353eca6acb7d5c48d6f93350c3aefcac218d212f21df7fc18bd8fa5381cf",
+          "sha256": "75ee4ec3b0e9810b230f8a890c768e4d50ff88695515e4ebaf92ebed9451c600",
+          "sha1": "328993aa94f0b7f6be45a46a5f73c19ae6018fcd",
+          "md5": "9616d2e85db5e61c55c49e1ad0b667f8"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "bakalib-1.0.0.21.jar",
+          "url": "bakalib-1.0.0.21.jar",
+          "size": 28221,
+          "sha512": "fecfd8cb7ed71edb3b9fd5d7c6f8fef124c55f4f29a505a2404373058d9cb621bf44353eca6acb7d5c48d6f93350c3aefcac218d212f21df7fc18bd8fa5381cf",
+          "sha256": "75ee4ec3b0e9810b230f8a890c768e4d50ff88695515e4ebaf92ebed9451c600",
+          "sha1": "328993aa94f0b7f6be45a46a5f73c19ae6018fcd",
+          "md5": "9616d2e85db5e61c55c49e1ad0b667f8"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "bakalib-1.0.0.21-sources.jar",
+          "url": "bakalib-1.0.0.21-sources.jar",
+          "size": 19905,
+          "sha512": "c94edf89c6a9b1f527e77b2696ebe823b46bfd50636188c4f78fe4d40888a2cd6caed22dac1bb34306176b639c07c257663175c3453a578abed0e8b91cadff0e",
+          "sha256": "aea19900646d3a6923c98585957f819f6a3ab4c69a86e7a780bc83e72bd76bed",
+          "sha1": "4cb24b55e798685f945bc40523bf649f33f38ac2",
+          "md5": "8bee3c4177ab536719983e531c69d945"
+        }
+      ]
+    }
+  ]
+}

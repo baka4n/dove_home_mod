@@ -1,0 +1,16 @@
+{
+  "block.dovehomemod.cactus_thorns": "仙人掌刺",
+  "block.dovehomemod.resurrected_sapling": "复活的树苗",
+  "block.dovehomemod.sandstone_furnace": "砂石炉",
+  "block.dovehomemod.sandstone_table": "砂石台",
+  "blood.count": "染血量：",
+  "cactus.bloody": "染血的",
+  "container.sandstone.furnace": "砂石炉",
+  "item.dovehomemod.sandstone_axe": "砂石斧",
+  "item.dovehomemod.sandstone_hoe": "砂石锄",
+  "item.dovehomemod.sandstone_pickaxe": "砂石稿",
+  "item.dovehomemod.sandstone_shovel": "砂石锹",
+  "item.dovehomemod.sandstone_sword": "砂石剑",
+  "itemGroup.dovehomemod.step1": "一阶段",
+  "sandstone.furnace.tooltip": "速度非常缓慢"
+}

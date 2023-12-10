@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        maven { url "https://maven.fabricmc.net/" }
+        maven { url "https://maven.architectury.dev/" }
+        maven { url "https://maven.minecraftforge.net/" }
+        gradlePluginPortal()
+    }
+}
+
+include("core")
+project(":core").name = "dovehomemodcore"
+include("forge")
+project(":forge").name = "dovehomemod"
+include("laysdelight")
+project(":laysdelight").name = "laysdelight"
+include("plannantianmen")
+project(":plannantianmen").name = "plannantianmen"
+include("bakalib")
+project(":bakalib").name = "bakalib"
+
+//include("galacticraft")
+//project(":galacticraft").name = "galacticraft"

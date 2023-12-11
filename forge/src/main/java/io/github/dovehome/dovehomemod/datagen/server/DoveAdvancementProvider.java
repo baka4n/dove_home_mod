@@ -59,7 +59,7 @@ public class DoveAdvancementProvider extends AdvancementProvider {
         Advancement sandstone = Advancement.Builder
                 .advancement()
                 .parent(sand)
-                .addCriterion("sandstone", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, Tags.Items.SANDSTONE))
+                .addCriterion("sandstone", new CraftingRecipeTrigger.TriggerInstance(Tags.Items.SANDSTONE))
                 .display(Blocks.SANDSTONE, Component.translatable("dovehomemod.sandstone.advancement.title"), Component.translatable("dovehomemod.sandstone.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone"));
         Advancement stick = Advancement.Builder
@@ -71,38 +71,38 @@ public class DoveAdvancementProvider extends AdvancementProvider {
         Advancement sandstone_pickaxe = Advancement.Builder
                 .advancement()
                 .parent(sandstone)
-                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, DoveItems.sandStonePickaxe))
+                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(DoveItems.sandStonePickaxe))
                 .display(DoveItems.sandStonePickaxe, Component.translatable("dovehomemod.sandstone.pickaxe.advancement.title"), Component.translatable("dovehomemod.sandstone.tools.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone_pickaxe"));
 
         Advancement sandstone_axe = Advancement.Builder
                 .advancement()
                 .parent(sandstone)
-                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, DoveItems.sandStonePickaxe))
+                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(DoveItems.sandStonePickaxe))
                 .display(DoveItems.sandStonePickaxe, Component.translatable("dovehomemod.sandstone.axe.advancement.title"), Component.translatable("dovehomemod.sandstone.tools.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone_axe"));
         Advancement sandstone_sword = Advancement.Builder
                 .advancement()
                 .parent(sandstone)
-                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, DoveItems.sandStoneAxe))
+                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(DoveItems.sandStoneAxe))
                 .display(DoveItems.sandStoneAxe, Component.translatable("dovehomemod.sandstone.sword.advancement.title"), Component.translatable("dovehomemod.sandstone.tools.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone_sword"));
         Advancement sandstone_shovel = Advancement.Builder
                 .advancement()
                 .parent(sandstone)
-                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, DoveItems.sandStoneShovel))
+                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(DoveItems.sandStoneShovel))
                 .display(DoveItems.sandStoneShovel, Component.translatable("dovehomemod.sandstone.shovel.advancement.title"), Component.translatable("dovehomemod.sandstone.tools.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone_shovel"));
         Advancement sandstone_hoe = Advancement.Builder
                 .advancement()
                 .parent(sandstone)
-                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, DoveItems.sandStoneHoe))
+                .addCriterion("sandstone_pickaxe", new CraftingRecipeTrigger.TriggerInstance(DoveItems.sandStoneHoe))
                 .display(DoveItems.sandStoneHoe, Component.translatable("dovehomemod.sandstone.hoe.advancement.title"), Component.translatable("dovehomemod.sandstone.tools.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone_hoe"));
         Advancement sandstone_knife = Advancement.Builder
                 .advancement()
                 .parent(sandstone)
-                .addCriterion("sandstone_knife", new CraftingRecipeTrigger.TriggerInstance(EntityPredicate.Composite.ANY, DoveItems.sandstoneKnife))
+                .addCriterion("sandstone_knife", new CraftingRecipeTrigger.TriggerInstance(DoveItems.sandstoneKnife))
                 .display(DoveItems.sandstoneKnife, Component.translatable("dovehomemod.sandstone.knife.advancement.title"), Component.translatable("dovehomemod.sandstone.knife.advancement.tips"), null, FrameType.TASK, true, true, false)
                 .save(consumer, advancementMain("sandstone_knife"));
     }

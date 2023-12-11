@@ -45,13 +45,29 @@ public class CraftingRecipeTrigger extends SimpleCriterionTrigger<CraftingRecipe
 
         }
 
+        public TriggerInstance(ItemPredicate item) {
+            super(CraftingRecipeTrigger.ID, EntityPredicate.Composite.ANY);
+            this.item = item;
+
+        }
+
         public TriggerInstance(EntityPredicate.Composite player, TagKey<Item> tagKey) {
             super(CraftingRecipeTrigger.ID, player);
             this.item = new ItemPredicate(tagKey, null, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY);
         }
 
+        public TriggerInstance(TagKey<Item> tagKey) {
+            super(CraftingRecipeTrigger.ID, EntityPredicate.Composite.ANY);
+            this.item = new ItemPredicate(tagKey, null, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY);
+        }
+
         public TriggerInstance(EntityPredicate.Composite player, ItemLike... like) {
             super(CraftingRecipeTrigger.ID, player);
+            this.item = new ItemPredicate(null, Arrays.stream(like).map(ItemLike::asItem).collect(Collectors.toSet()), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY);
+        }
+
+        public TriggerInstance(ItemLike... like) {
+            super(CraftingRecipeTrigger.ID, EntityPredicate.Composite.ANY);
             this.item = new ItemPredicate(null, Arrays.stream(like).map(ItemLike::asItem).collect(Collectors.toSet()), MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY);
         }
 

@@ -15,13 +15,10 @@ public class DovePlayerEvents {
     @SubscribeEvent
     public static void firstJoinServer(PlayerEvent.PlayerLoggedInEvent event) {
         Player entity = event.getEntity();
-
-
         Level level = entity.getLevel();
         if (level.isClientSide()) {
             return;
         }
-
         MinecraftServer server = entity.getServer();
         if (server != null) {
             ServerLevel level1 = server.getLevel(DoveDimensions.DESERT_KEY);

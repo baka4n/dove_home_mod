@@ -2,6 +2,7 @@ package io.github.dovehome.dovehomemod.datagen;
 
 import io.github.dovehome.dovehomemod.datagen.client.i18n.EnUsLanguage;
 import io.github.dovehome.dovehomemod.datagen.client.i18n.ZhCnLanguage;
+import io.github.dovehome.dovehomemod.datagen.server.DoveAdvancementProvider;
 import io.github.dovehome.dovehomemod.datagen.server.DoveRecipeProvider;
 import io.github.dovehome.dovehomemod.datagen.server.DoveTableLootProvider;
 import io.github.dovehome.dovehomemod.forge.DovehomemodForge;
@@ -22,5 +23,6 @@ public class DovehomemodDataGen {
         generator.addProvider(event.includeClient(), new ZhCnLanguage(generator));
         generator.addProvider(event.includeServer(), new DoveTableLootProvider(generator, DovehomemodForge.modid));
         generator.addProvider(event.includeServer(), new DoveRecipeProvider(generator));
+        generator.addProvider(event.includeServer(), new DoveAdvancementProvider(generator));
     }
 }

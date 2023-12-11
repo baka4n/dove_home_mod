@@ -26,6 +26,10 @@ public class DovehomemodForge {
         return new ResourceLocation(modid, name);
     }
 
+    public static String idStr(String name) {
+        return id(name).toString();
+    }
+
     public DovehomemodForge() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(DoveRegistryEvent::registry);
@@ -42,6 +46,7 @@ public class DovehomemodForge {
         eventBus.addListener(DoveBlockEvents::rightClientBlock);
         //cap registry
         eventBus.addListener(DovePlayerEvents::firstJoinServer);
+
     }
 
 

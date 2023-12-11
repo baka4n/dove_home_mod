@@ -27,11 +27,11 @@
         {
           "name": "dovehomemodcore-1.0.0.0.jar",
           "url": "dovehomemodcore-1.0.0.0.jar",
-          "size": 233961,
-          "sha512": "08df8b27a1f3ec2b03b97548db16a0ce8540824d81dd942cb74e37681f41bc136798ba8312bcdb47800200e4ad9079c1abed8a6b819223a57e979998e911af61",
-          "sha256": "b4c57a02eeb2d3ddf91b7866c178ffb40a8dce51d3c947e508dc81ac64f79c61",
-          "sha1": "7ce7043d8b3cbdba0050c86374780598c66f367c",
-          "md5": "e44e93f6748dba856d5c172f6b0582db"
+          "size": 5673636,
+          "sha512": "0c3928717cfb47b3966a1fcd9189e2eb9c9964c58758cf78a649810741af241e3272dfee57e8127d632316c2670d89f8dab51ef21b91a55340ff4fc3fc8cb241",
+          "sha256": "459eae8432b9bc3fee70fc4ce0a61d5021c48efbc75eec9323c64e969885bb1a",
+          "sha1": "c75332625d591ae35e162e2a9c0ca1d9ea131e45",
+          "md5": "91cf500cf9f408ee60592082b248527a"
         }
       ]
     },
@@ -49,7 +49,7 @@
           "group": "io.github.dovehome",
           "module": "dovehomemod",
           "version": {
-            "requires": "1.0.0.8"
+            "requires": "1.0.0.9"
           }
         }
       ],
@@ -57,11 +57,11 @@
         {
           "name": "dovehomemodcore-1.0.0.0.jar",
           "url": "dovehomemodcore-1.0.0.0.jar",
-          "size": 233961,
-          "sha512": "08df8b27a1f3ec2b03b97548db16a0ce8540824d81dd942cb74e37681f41bc136798ba8312bcdb47800200e4ad9079c1abed8a6b819223a57e979998e911af61",
-          "sha256": "b4c57a02eeb2d3ddf91b7866c178ffb40a8dce51d3c947e508dc81ac64f79c61",
-          "sha1": "7ce7043d8b3cbdba0050c86374780598c66f367c",
-          "md5": "e44e93f6748dba856d5c172f6b0582db"
+          "size": 5673636,
+          "sha512": "0c3928717cfb47b3966a1fcd9189e2eb9c9964c58758cf78a649810741af241e3272dfee57e8127d632316c2670d89f8dab51ef21b91a55340ff4fc3fc8cb241",
+          "sha256": "459eae8432b9bc3fee70fc4ce0a61d5021c48efbc75eec9323c64e969885bb1a",
+          "sha1": "c75332625d591ae35e162e2a9c0ca1d9ea131e45",
+          "md5": "91cf500cf9f408ee60592082b248527a"
         }
       ]
     },
@@ -77,11 +77,11 @@
         {
           "name": "dovehomemodcore-1.0.0.0-sources.jar",
           "url": "dovehomemodcore-1.0.0.0-sources.jar",
-          "size": 5994,
-          "sha512": "4b297d5989ceb4d10daacd3717cfb4f2c73e19b93a79a0b663ddc3172e2cf95a2881f08c620dfd8ad51dab3499c42a82b6488d5075e9359ea5f2e2ebfa7eabe2",
-          "sha256": "38fbe4d1613690ff8ba6e5ba293aa9b448560721f365da07e3e535c77a59ea83",
-          "sha1": "ab3e2f8c9c98e9a8cdd6dc00b103d7dc1b6d4e32",
-          "md5": "7c8b3dd3514d0ced7f8f31dd6f89c15a"
+          "size": 5804,
+          "sha512": "fbf3d1d88e4b859cdd8646cccf1236a185aab8225466e642ad6c7742b0549668a74d16fbfe89d49d29a2cf5bb719dc8cd9d332e5b68a97799f7d7b4511aac9b3",
+          "sha256": "95e31886931ea966310e2f4cde35383654642bd729536127d5b5d4d4578e8f86",
+          "sha1": "867d8785236c9c6c8b96af81b970b894c64110ef",
+          "md5": "6a5789ba4cb9de2008c2e7cec0008c43"
         }
       ]
     }

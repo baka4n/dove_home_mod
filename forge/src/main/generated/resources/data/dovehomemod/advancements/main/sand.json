@@ -1,0 +1,37 @@
+{
+  "parent": "dovehomemod:main/root",
+  "criteria": {
+    "sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:sand"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dovehomemod.sand.advancement.title"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:sand"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dovehomemod.sand.advancement.title"
+    }
+  },
+  "requirements": [
+    [
+      "sand"
+    ]
+  ]
+}

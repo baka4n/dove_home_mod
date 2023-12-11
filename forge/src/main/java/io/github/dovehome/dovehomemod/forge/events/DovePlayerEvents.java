@@ -10,7 +10,15 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
+import static io.github.dovehome.dovehomemod.forge.events.DoveCriteriaTriggers.crafting_recipe;
+
 public class DovePlayerEvents {
+    @SubscribeEvent
+    public static void craftEvents(PlayerEvent.ItemCraftedEvent event) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+            crafting_recipe.trigger(serverPlayer, event.getCrafting());
+        }
+    }
 
     @SubscribeEvent
     public static void firstJoinServer(PlayerEvent.PlayerLoggedInEvent event) {

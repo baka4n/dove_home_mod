@@ -1,0 +1,37 @@
+{
+  "parent": "dovehomemod:main/sand",
+  "criteria": {
+    "stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:stick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dovehomemod.stick.advancement.tips"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:stick"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dovehomemod.stick.advancement.title"
+    }
+  },
+  "requirements": [
+    [
+      "stick"
+    ]
+  ]
+}

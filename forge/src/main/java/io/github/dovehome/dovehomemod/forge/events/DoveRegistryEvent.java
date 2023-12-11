@@ -30,6 +30,7 @@ public class DoveRegistryEvent {
 
     @SubscribeEvent
     public static void registry(RegisterEvent event) {
+
         RegistryAll registryAll = new RegistryAll(modid);
         registryAll.add(DoveBlocks.class);
         registryAll.add(DoveItems.class);

@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "first_join_desert": {
+      "conditions": {
+        "to": "dovehomemod:desert"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dovehomemod.root.advancement.tips"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "dovehomemod:sandstone_pickaxe",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dovehomemod.root.advancement.title"
+    }
+  },
+  "requirements": [
+    [
+      "first_join_desert"
+    ]
+  ]
+}

@@ -8,8 +8,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
-
 public class CactusThornsBlockEntity extends BlockEntity {
     private int blood_count;//The amount of blood stained. unit -> ml
     public CactusThornsBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {

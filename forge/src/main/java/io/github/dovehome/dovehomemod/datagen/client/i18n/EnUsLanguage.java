@@ -29,6 +29,21 @@ public class EnUsLanguage extends DoveLanguageProvider {
         add("blood.count", "blood staining amount is ");
         add("sandstone.furnace.tooltip", "It's very slow");
         add("container.sandstone.furnace", "sandstone furnace");
+        add("dovehomemod.root.advancement.title", "The starting point of everything");
+        add("dovehomemod.root.advancement.tips", "change dimension to desert");
+        add("dovehomemod.sand.advancement.title", "It used to be full of gold, but now it's full of \"gold\"");
+        add("dovehomemod.sandstone.advancement.title", "very hard");
+        add("dovehomemod.sandstone.advancement.tips", "This is so hard");
+        add("dovehomemod.stick.advancement.title", "dirty");
+        add("dovehomemod.stick.advancement.tips", "dirty stick");
+        add("dovehomemod.sandstone.pickaxe.advancement.title", "Worse than a wooden pickaxe.");
+        add("dovehomemod.sandstone.axe.advancement.title", "Worse than a wooden axe.");
+        add("dovehomemod.sandstone.sword.advancement.title", "Worse than a wooden sword.");
+        add("dovehomemod.sandstone.shovel.advancement.title", "Worse than a wooden shovel.");
+        add("dovehomemod.sandstone.hoe.advancement.title", "Worse than a wooden hoe.");
+        add("dovehomemod.sandstone.tools.advancement.tips", "Use it reluctantly.");
+        add("dovehomemod.sandstone.knife.advancement.title", "Backhand carving knife");
+        add("dovehomemod.sandstone.knife.advancement.tips", "How come there is such a weird design?");
         add(((TranslatableContents) CactusThornsBlockItem.bloody.getContents()).getKey(), "bloody ");
     }
 }

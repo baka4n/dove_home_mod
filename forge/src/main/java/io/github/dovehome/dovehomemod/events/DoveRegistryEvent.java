@@ -1,4 +1,4 @@
-package io.github.dovehome.dovehomemod.forge.events;
+package io.github.dovehome.dovehomemod.events;
 
 import io.github.dovehome.bakalib.forge.registry.RegistryAll;
 import io.github.dovehome.dovehomemod.animations.blocks.DoveAnimationBlocks;

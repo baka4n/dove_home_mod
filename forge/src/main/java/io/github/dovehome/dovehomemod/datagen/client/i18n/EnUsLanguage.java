@@ -44,6 +44,17 @@ public class EnUsLanguage extends DoveLanguageProvider {
         add("dovehomemod.sandstone.tools.advancement.tips", "Use it reluctantly.");
         add("dovehomemod.sandstone.knife.advancement.title", "Backhand carving knife");
         add("dovehomemod.sandstone.knife.advancement.tips", "How come there is such a weird design?");
+        add("dovehomemod.cheaters.advancement.title", "Cheaters");
+        add("dovehomemod.cheaters.advancement.tips", "You watch the world with the eyes of an administrator");
+        add("dovehomemod.voyeurs.advancement.title", "Voyeurs");
+        add("dovehomemod.voyeurs.advancement.tips", "You're a voyeur and love to watch the man next door take a shower");
+        add("dovehomemod.adventurer.advancement.title", "Adventurer");
+        add("dovehomemod.adventurer.advancement.tips", "You are a man of strength");
+        add("dovehomemod.cactus.thorns.advancement.title", "114514");
+        add("dovehomemod.cactus.thorns.advancement.tips", "Hmm Hmm Hmm AAA");
+        add("dovehomemod.garbled.advancement.title", "烫烫烫");
+        add("dovehomemod.garbled.advancement.tips", "锟斤拷");
+
         add(((TranslatableContents) CactusThornsBlockItem.bloody.getContents()).getKey(), "bloody ");
     }
 }

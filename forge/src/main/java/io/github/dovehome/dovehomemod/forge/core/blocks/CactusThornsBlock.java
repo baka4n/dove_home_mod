@@ -37,7 +37,6 @@ public class CactusThornsBlock extends HorizontalDirectionalEntitySaveNbtBlock {
                 return;
             }
             block.addBloodCount(1);
-
         }
     }
 

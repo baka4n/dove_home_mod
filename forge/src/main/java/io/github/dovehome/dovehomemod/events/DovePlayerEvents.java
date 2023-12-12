@@ -1,4 +1,4 @@
-package io.github.dovehome.dovehomemod.forge.events;
+package io.github.dovehome.dovehomemod.events;
 
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveDimensions;
 import io.github.dovehome.dovehomemod.forge.persistence.DoveSavedData;
@@ -10,7 +10,8 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import static io.github.dovehome.dovehomemod.forge.events.DoveCriteriaTriggers.crafting_recipe;
+import static io.github.dovehome.dovehomemod.events.DoveCriteriaTriggers.crafting_recipe;
+import static io.github.dovehome.dovehomemod.events.DoveCriteriaTriggers.gamemode_change;
 
 public class DovePlayerEvents {
     @SubscribeEvent
@@ -19,6 +20,14 @@ public class DovePlayerEvents {
             crafting_recipe.trigger(serverPlayer, event.getCrafting());
         }
     }
+    @SubscribeEvent
+    public static void changeGameMode(PlayerEvent.PlayerChangeGameModeEvent event) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+            gamemode_change.trigger(serverPlayer, event.getNewGameMode());
+        }
+    }
+
+
 
     @SubscribeEvent
     public static void firstJoinServer(PlayerEvent.PlayerLoggedInEvent event) {

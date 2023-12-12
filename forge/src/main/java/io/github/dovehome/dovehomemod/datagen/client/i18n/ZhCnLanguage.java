@@ -25,6 +25,7 @@ public class ZhCnLanguage extends DoveLanguageProvider {
         add(DoveItems.sandStoneSword, "砂石剑");
         add(DoveItems.sandStoneShovel, "砂石锹");
         add(DoveItems.sandStoneHoe, "砂石锄");
+
         add("blood.count", "染血量：");
         add("sandstone.furnace.tooltip", "速度非常缓慢");
         add("container.sandstone.furnace", "砂石炉");
@@ -43,6 +44,17 @@ public class ZhCnLanguage extends DoveLanguageProvider {
         add("dovehomemod.sandstone.tools.advancement.tips", "勉强用用");
         add("dovehomemod.sandstone.knife.advancement.title", "反手握的雕刻刀");
         add("dovehomemod.sandstone.knife.advancement.tips", "怎么会有这种奇葩设计？");
+        add("dovehomemod.cheaters.advancement.title", "作弊者");
+        add("dovehomemod.cheaters.advancement.tips", "你以管理员的目光注视着世界");
+        add("dovehomemod.voyeurs.advancement.title", "偷窥狂");
+        add("dovehomemod.voyeurs.advancement.tips", "你是个偷窥狂喜欢看隔壁男子洗澡");
+        add("dovehomemod.adventurer.advancement.title", "冒险家");
+        add("dovehomemod.adventurer.advancement.tips", "你是一个有石粒的男人");
+        add("dovehomemod.cactus.thorns.advancement.title", "114514");
+        add("dovehomemod.cactus.thorns.advancement.tips", "哼哼哼啊啊啊");
+        add("dovehomemod.garbled.advancement.title", "烫烫烫");
+        add("dovehomemod.garbled.advancement.tips", "锟斤拷");
+
         add(((TranslatableContents) CactusThornsBlockItem.bloody.getContents()).getKey(), "染血的");
     }
 }

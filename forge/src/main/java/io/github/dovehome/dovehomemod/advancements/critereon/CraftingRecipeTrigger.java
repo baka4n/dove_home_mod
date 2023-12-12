@@ -3,16 +3,13 @@ package io.github.dovehome.dovehomemod.advancements.critereon;
 import com.google.gson.JsonObject;
 import io.github.dovehome.dovehomemod.forge.DovehomemodForge;
 import net.minecraft.advancements.critereon.*;
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
-import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.HashSet;

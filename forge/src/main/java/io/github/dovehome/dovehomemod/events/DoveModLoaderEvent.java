@@ -1,4 +1,4 @@
-package io.github.dovehome.dovehomemod.forge.events;
+package io.github.dovehome.dovehomemod.events;
 
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveBlocks;
 import io.github.dovehome.dovehomemod.forge.core.screen.SandstoneFurnaceScreen;

@@ -20,3 +20,5 @@ accessible method net/minecraft/world/level/block/entity/AbstractFurnaceBlockEnt
 accessible field net/minecraft/world/level/block/entity/BlockEntity type Lnet/minecraft/world/level/block/entity/BlockEntityType;
 mutable field net/minecraft/world/level/block/entity/BlockEntity type Lnet/minecraft/world/level/block/entity/BlockEntityType;
 accessible class net/minecraft/world/item/crafting/SimpleCookingSerializer$CookieBaker
+accessible field net/minecraft/data/advancements/AdvancementProvider tabs Ljava/util/List;
+mutable field net/minecraft/data/advancements/AdvancementProvider tabs Ljava/util/List;

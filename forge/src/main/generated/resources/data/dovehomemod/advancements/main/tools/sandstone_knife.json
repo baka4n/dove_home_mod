@@ -1,0 +1,36 @@
+{
+  "parent": "dovehomemod:main/sandstone",
+  "criteria": {
+    "sandstone_knife": {
+      "conditions": {
+        "item": {
+          "items": [
+            "dovehomemod:sandstone_knife"
+          ]
+        }
+      },
+      "trigger": "dovehomemod:crafting_recipe"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "dovehomemod.sandstone.knife.advancement.tips"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dovehomemod:sandstone_knife",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "dovehomemod.sandstone.knife.advancement.title"
+    }
+  },
+  "requirements": [
+    [
+      "sandstone_knife"
+    ]
+  ]
+}

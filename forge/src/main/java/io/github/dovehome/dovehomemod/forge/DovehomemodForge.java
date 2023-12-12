@@ -2,11 +2,8 @@ package io.github.dovehome.dovehomemod.forge;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import io.github.dovehome.dovehomemod.events.*;
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveDimensions;
-import io.github.dovehome.dovehomemod.forge.events.DoveBlockEvents;
-import io.github.dovehome.dovehomemod.forge.events.DoveModLoaderEvent;
-import io.github.dovehome.dovehomemod.forge.events.DovePlayerEvents;
-import io.github.dovehome.dovehomemod.forge.events.DoveRegistryEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,11 +23,15 @@ public class DovehomemodForge {
         return new ResourceLocation(modid, name);
     }
 
+    public static String advancementMain(String name) {
+        return id("main/" + name).toString();
+    }
+
     public DovehomemodForge() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(DoveRegistryEvent::registry);
 
-
+        DoveCriteriaTriggers.init();
         modEventBus.addListener(DoveModLoaderEvent::init);
         modEventBus.addListener(DoveModLoaderEvent::commonSetup);
         DoveDimensions.registry();
@@ -38,10 +39,14 @@ public class DovehomemodForge {
         modEventBus.addListener(DovehomemodClientForge::registryRender);
 //        modEventBus.addListener(DovehomemodForge::commonSetup);
         IEventBus eventBus = MinecraftForge.EVENT_BUS;
-//        eventBus.register(this);
-        eventBus.addListener(DoveBlockEvents::rightClientBlock);
-        //cap registry
+
+        eventBus.addListener(DoveBlockEvents::rightClickBlock);
+        eventBus.addListener(DoveBlockEvents::rightClickBlockAdvancement);
+        //player registry
+        eventBus.addListener(DovePlayerEvents::craftEvents);
+        eventBus.addListener(DovePlayerEvents::changeGameMode);
         eventBus.addListener(DovePlayerEvents::firstJoinServer);
+
     }
 
 

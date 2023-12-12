@@ -64,7 +64,7 @@ public class DoveAdvancementProvider extends AdvancementProvider {
                 .save(consumer, advancementMain("gamemode/voyeurs"));
         Advancement adventurer = Advancement.Builder
                 .advancement()
-                .addCriterion("adventurer", GameModeChangeTrigger.TriggerInstance.hasMode(GameType.SPECTATOR))
+                .addCriterion("adventurer", GameModeChangeTrigger.TriggerInstance.hasMode(GameType.ADVENTURE))
                 .display(Items.AIR, Component.translatable("dovehomemod.adventurer.advancement.title"),Component.translatable("dovehomemod.adventurer.advancement.tips"), null, FrameType.GOAL, true, true, false)
                 .save(consumer, advancementMain("gamemode/adventurer"));
         Advancement sand =

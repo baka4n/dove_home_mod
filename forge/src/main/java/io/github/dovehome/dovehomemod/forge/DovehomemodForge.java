@@ -6,11 +6,14 @@ import io.github.dovehome.dovehomemod.events.*;
 import io.github.dovehome.dovehomemod.forge.core.blocks.properties.Properties;
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveDimensions;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.portal.PortalShape;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
+import vazkii.botania.common.item.BotaniaItems;
 
 @Mod(DovehomemodForge.modid)
 public class DovehomemodForge {

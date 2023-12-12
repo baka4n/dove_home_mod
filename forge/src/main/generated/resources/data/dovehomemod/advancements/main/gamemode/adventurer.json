@@ -2,7 +2,7 @@
   "criteria": {
     "adventurer": {
       "conditions": {
-        "type": "SPECTATOR"
+        "type": "ADVENTURE"
       },
       "trigger": "dovehomemod:gamemode_change"
     }

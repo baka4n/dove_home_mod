@@ -1,9 +1,11 @@
 package io.github.dovehome.dovehomemod.forge.core.items;
 
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveBlocks;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Inventory;
@@ -27,7 +29,7 @@ public class CactusThornsBlockItem extends BlockItem {
 
     public static final int MAX = Integer.MAX_VALUE / 2;
 
-    public static final MutableComponent bloody = Component.translatable("cactus.bloody");
+    public static final MutableComponent bloody = Component.translatable("cactus.bloody").setStyle(Style.EMPTY.withColor(ChatFormatting.GOLD));
 
     public static final Random ran = new Random();
     @Override

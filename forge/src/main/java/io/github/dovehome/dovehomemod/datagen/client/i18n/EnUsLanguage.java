@@ -18,13 +18,14 @@ public class EnUsLanguage extends DoveLanguageProvider {
         add(Step1Tab.getInstance(), "Step:1");
         add(DoveBlocks.cactusThorns, "cactus thorns");
         add(DoveBlocks.sandstoneTable, "Sandstone Table");
-        add(DoveBlocks.resurrectedSapling, "resurrected Sapling");
+        add(DoveBlocks.resurrectedSapling, "Rebel saplings");
         add(DoveBlocks.sandstoneFurnace, "sandstone furnace");
         add(DoveItems.sandStonePickaxe, "Sandstone Pickaxe");
         add(DoveItems.sandStoneAxe, "Sandstone Axe");
         add(DoveItems.sandStoneSword, "Sandstone Sword");
         add(DoveItems.sandStoneShovel, "Sandstone Shovel");
         add(DoveItems.sandStoneHoe, "Sandstone Hoe");
+        add(DoveItems.sandstoneKnife, "sandstone knife");
 
         add("blood.count", "blood staining amount is ");
         add("sandstone.furnace.tooltip", "It's very slow");

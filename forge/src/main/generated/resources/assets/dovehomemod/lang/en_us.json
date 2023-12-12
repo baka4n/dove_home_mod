@@ -1,6 +1,6 @@
 {
   "block.dovehomemod.cactus_thorns": "cactus thorns",
-  "block.dovehomemod.resurrected_sapling": "resurrected Sapling",
+  "block.dovehomemod.resurrected_sapling": "Rebel saplings",
   "block.dovehomemod.sandstone_furnace": "sandstone furnace",
   "block.dovehomemod.sandstone_table": "Sandstone Table",
   "blood.count": "blood staining amount is ",
@@ -33,6 +33,7 @@
   "dovehomemod.voyeurs.advancement.title": "Voyeurs",
   "item.dovehomemod.sandstone_axe": "Sandstone Axe",
   "item.dovehomemod.sandstone_hoe": "Sandstone Hoe",
+  "item.dovehomemod.sandstone_knife": "sandstone knife",
   "item.dovehomemod.sandstone_pickaxe": "Sandstone Pickaxe",
   "item.dovehomemod.sandstone_shovel": "Sandstone Shovel",
   "item.dovehomemod.sandstone_sword": "Sandstone Sword",

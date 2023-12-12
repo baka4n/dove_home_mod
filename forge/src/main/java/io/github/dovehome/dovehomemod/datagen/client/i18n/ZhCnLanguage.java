@@ -17,14 +17,15 @@ public class ZhCnLanguage extends DoveLanguageProvider {
     protected void addTranslations() {
         add(Step1Tab.getInstance(), "一阶段");
         add(DoveBlocks.cactusThorns, "仙人掌刺");
-        add(DoveBlocks.resurrectedSapling, "复活的树苗");
-        add(DoveBlocks.sandstoneTable, "砂石台");
-        add(DoveBlocks.sandstoneFurnace, "砂石炉");
-        add(DoveItems.sandStonePickaxe, "砂石稿");
-        add(DoveItems.sandStoneAxe, "砂石斧");
-        add(DoveItems.sandStoneSword, "砂石剑");
-        add(DoveItems.sandStoneShovel, "砂石锹");
-        add(DoveItems.sandStoneHoe, "砂石锄");
+        add(DoveBlocks.resurrectedSapling, "逆命树苗");
+        add(DoveBlocks.sandstoneTable, "砂台");
+        add(DoveBlocks.sandstoneFurnace, "砂炉");
+        add(DoveItems.sandStonePickaxe, "砂稿");
+        add(DoveItems.sandStoneAxe, "砂斧");
+        add(DoveItems.sandStoneSword, "砂剑");
+        add(DoveItems.sandStoneShovel, "砂锹");
+        add(DoveItems.sandStoneHoe, "砂锄");
+        add(DoveItems.sandstoneKnife, "砂匕");
 
         add("blood.count", "染血量：");
         add("sandstone.furnace.tooltip", "速度非常缓慢");

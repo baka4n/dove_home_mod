@@ -3,6 +3,7 @@ package io.github.dovehome.dovehomemod.forge;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.github.dovehome.dovehomemod.events.*;
+import io.github.dovehome.dovehomemod.forge.core.blocks.properties.Properties;
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveDimensions;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,6 +33,7 @@ public class DovehomemodForge {
         modEventBus.addListener(DoveRegistryEvent::registry);
 
         DoveCriteriaTriggers.init();
+        Properties.init();
         modEventBus.addListener(DoveModLoaderEvent::init);
         modEventBus.addListener(DoveModLoaderEvent::commonSetup);
         DoveDimensions.registry();

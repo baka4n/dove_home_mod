@@ -3,11 +3,13 @@ package io.github.dovehome.dovehomemod.events;
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveBlocks;
 import io.github.dovehome.dovehomemod.forge.core.screen.SandstoneFurnaceScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class DoveModLoaderEvent {
-    public static void commonSetup(FMLCommonSetupEvent event) {
+    @SubscribeEvent
+    public void commonSetup(FMLCommonSetupEvent event) {
 //        event.enqueueWork(() -> {
 //            Path path = FMLPaths.CONFIGDIR.get();
 //            Path ftbquests = path.resolve("ftbquests").resolve("quests");
@@ -47,7 +49,8 @@ public class DoveModLoaderEvent {
 //        }
 //    }
 
-    public static void init(final FMLClientSetupEvent event) {
+    @SubscribeEvent
+    public void init(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(DoveBlocks.sandstoneFurnaceMenu, SandstoneFurnaceScreen::new);
         });

@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BlockBehaviour.class)
 public class EntityInsideBlockMixin {
-    @Inject(method = "entityInside", at = @At("RETURN"))
+    @Inject(method = "entityInside", at = @At("HEAD"))
     private void entityInside(BlockState state,
                               Level level,
                               BlockPos pos,

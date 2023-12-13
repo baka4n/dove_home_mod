@@ -24,7 +24,7 @@ public class EntityInsideBlockTrigger extends BaseBlockTrigger<EntityInsideBlock
     }
 
     @Override
-    public ResourceLocation getId() {
+    public @NotNull ResourceLocation getId() {
         return ID;
     }
 

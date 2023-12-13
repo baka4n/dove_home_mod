@@ -16,20 +16,23 @@ import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class CactusThornsBlock extends HorizontalDirectionalEntitySaveNbtBlock {
 
-    public CactusThornsBlock(Properties properties) {
-        super(properties);
+    public CactusThornsBlock() {
+        super(BlockBehaviour.Properties.of(Material.CACTUS).noOcclusion().noCollission());
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
+        super.entityInside(state, level, pos, entity);
         entity.hurt(DamageSource.CACTUS, 1F);
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof CactusThornsBlockEntity block) {
@@ -50,37 +53,6 @@ public class CactusThornsBlock extends HorizontalDirectionalEntitySaveNbtBlock {
                                           @NotNull BlockHitResult hit) {
         return super.use(state, level, pos, player, hand, hit);
     }
-
-//    @SuppressWarnings("deprecation")
-//    @Override
-//    public void spawnAfterBreak(@NotNull BlockState state,
-//                                @NotNull ServerLevel level,
-//                                @NotNull BlockPos pos,
-//                                @NotNull ItemStack stack,
-//                                boolean dropExperience) {
-//        super.spawnAfterBreak(state, level, pos, stack, dropExperience);
-//        CactusThornsBlockEntity blockEntity = (CactusThornsBlockEntity) level.getBlockEntity(pos);
-//        if (blockEntity != null && blockEntity.getBloodCount() == 0) {
-//            CompoundTag tag = stack.getTag() != null ? stack.getTag() : new CompoundTag();
-//            blockEntity.saveAdditional(tag);
-//            stack.setTag(tag);
-//        }
-//    }
-//
-//    @SuppressWarnings("DataFlowIssue")
-//    @Override
-//    public void setPlacedBy(@NotNull Level level,
-//                            @NotNull BlockPos pos,
-//                            @NotNull BlockState state,
-//                            @Nullable LivingEntity placer,
-//                            @NotNull ItemStack stack) {
-//        super.setPlacedBy(level, pos, state, placer, stack);
-//        if (stack.hasTag()) {
-//            CactusThornsBlockEntity blockEntity = newBlockEntity(pos, state);
-//            blockEntity.load(stack.getTag());
-//            level.setBlockEntity(blockEntity);
-//        }
-//    }
 
     @Nullable
     @Override
@@ -103,7 +75,6 @@ public class CactusThornsBlock extends HorizontalDirectionalEntitySaveNbtBlock {
         return super.rotate(state, level, pos, direction);
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public @NotNull BlockState mirror(@NotNull BlockState state, @NotNull Mirror mirror) {
         return super.mirror(state, mirror);

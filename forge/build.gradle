@@ -58,7 +58,7 @@ dependencies {
     modImplementation("vazkii.botania:Botania:1.19.2-440-FORGE")
     modImplementation("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.3")
     modImplementation("dev.latvian.mods:kubejs-forge:1902.6.2-build.42")
-    modImplementation(include("io.github.dovehome:bakalib:1.0.0.21"))
+    modImplementation(include("io.github.dovehome:bakalib:1.0.0.23"))
     modImplementation(include("curse.maven:citadel-331936:4556677"))
     modImplementation(include("curse.maven:zerocore-247921:4702621"))
 //    modImplementation("dev.ftb.mods:ftb-quests-forge:1902.5.7-build.326")

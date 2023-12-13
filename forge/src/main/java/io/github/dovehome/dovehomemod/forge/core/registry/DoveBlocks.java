@@ -79,8 +79,8 @@ public class DoveBlocks {
     public static final MenuType<SandstoneFurnaceMenu> sandstoneFurnaceMenu;
 
     static {
-        cactusThorns = new CactusThornsBlock(BlockBehaviour.Properties.of(Material.CACTUS).noOcclusion().noCollission());
-        cactusThronsItem = new CactusThornsBlockItem(cactusThorns, new Item.Properties().tab(Step1Tab.getInstance()));
+        cactusThorns = new CactusThornsBlock();
+        cactusThronsItem = new CactusThornsBlockItem(Step1Tab.getInstance());
         cactusThornsEntity = BlockEntityType.Builder.of(CactusThornsBlockEntity::new, cactusThorns).build(DSL.remainderType());
         resurrectedSapling = new ResurrectedSapling(new ResurrectedOakTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS));
         resurrectedSaplingItem = new BlockItem(resurrectedSapling, new Item.Properties().tab(Step1Tab.getInstance()));

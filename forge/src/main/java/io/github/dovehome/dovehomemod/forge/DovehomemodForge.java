@@ -2,6 +2,8 @@ package io.github.dovehome.dovehomemod.forge;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import dev.architectury.platform.forge.EventBuses;
+import io.github.dovehome.bakalib.forge.registry.ForgeEventRegistry;
 import io.github.dovehome.dovehomemod.events.*;
 import io.github.dovehome.dovehomemod.forge.core.blocks.properties.Properties;
 import io.github.dovehome.dovehomemod.forge.core.registry.DoveDimensions;
@@ -31,27 +33,25 @@ public class DovehomemodForge {
         return id("main/" + name).toString();
     }
 
-    public DovehomemodForge() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(DoveRegistryEvent::registry);
+    public ForgeEventRegistry registry;
 
-        DoveCriteriaTriggers.init();
-        Properties.init();
-        modEventBus.addListener(DoveModLoaderEvent::init);
-        modEventBus.addListener(DoveModLoaderEvent::commonSetup);
+    public DovehomemodForge() {
+
         DoveDimensions.registry();
         GeckoLib.initialize();
-        modEventBus.addListener(DovehomemodClientForge::registryRender);
-//        modEventBus.addListener(DovehomemodForge::commonSetup);
-        IEventBus eventBus = MinecraftForge.EVENT_BUS;
-
-        eventBus.addListener(DoveBlockEvents::rightClickBlock);
-        eventBus.addListener(DoveBlockEvents::rightClickBlockAdvancement);
-        //player registry
-        eventBus.addListener(DovePlayerEvents::craftEvents);
-        eventBus.addListener(DovePlayerEvents::changeGameMode);
-        eventBus.addListener(DovePlayerEvents::firstJoinServer);
-
+        DoveCriteriaTriggers.init();
+        Properties.init();
+        registry = new ForgeEventRegistry(FMLJavaModLoadingContext.get().getModEventBus());
+        registry
+                .setType(ForgeEventRegistry.Type.MOD)
+                .listener(DoveRegistryEvent::registry)
+                .registry(new DoveModLoaderEvent())
+                .listener(DovehomemodClientForge::registryRender)
+                .setType(ForgeEventRegistry.Type.FORGE)
+                .registry(new DoveBlockEvents())
+                .registry(new DovePlayerEvents());
+        registry = null;
+        System.gc();
     }
 
 

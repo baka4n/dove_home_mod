@@ -15,13 +15,13 @@ import static io.github.dovehome.dovehomemod.events.DoveCriteriaTriggers.gamemod
 
 public class DovePlayerEvents {
     @SubscribeEvent
-    public static void craftEvents(PlayerEvent.ItemCraftedEvent event) {
+    public void craftEvents(PlayerEvent.ItemCraftedEvent event) {
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             crafting_recipe.trigger(serverPlayer, event.getCrafting());
         }
     }
     @SubscribeEvent
-    public static void changeGameMode(PlayerEvent.PlayerChangeGameModeEvent event) {
+    public void changeGameMode(PlayerEvent.PlayerChangeGameModeEvent event) {
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             gamemode_change.trigger(serverPlayer, event.getNewGameMode());
         }
@@ -30,7 +30,7 @@ public class DovePlayerEvents {
 
 
     @SubscribeEvent
-    public static void firstJoinServer(PlayerEvent.PlayerLoggedInEvent event) {
+    public void firstJoinServer(PlayerEvent.PlayerLoggedInEvent event) {
         Player entity = event.getEntity();
         Level level = entity.getLevel();
         if (level.isClientSide()) {

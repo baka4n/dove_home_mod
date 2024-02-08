@@ -1,0 +1,12 @@
+dependencies {
+    modImplementation(include(libs.bakalib.forge.get()))
+    modApi(libs.resourceful.config.forge)
+    modImplementation(libs.kubejs.forge)
+    modImplementation(include(libs.geckolib.forge.get()))
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.2.0"))
+    implementation(include("io.github.llamalad7:mixinextras-forge:0.2.0"))
+    modImplementation(libs.create.forge) {
+        exclude group: "org.squiddev"
+        exclude group: "mezz.jei"
+    }
+}

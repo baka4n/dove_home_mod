@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "dovehomemod",
+  "version": "${version}",
+
+  "name": "dovehomemod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.dovehome.dovehomemod.fabric.DovehomemodFabric"
+    ]
+  },
+  "mixins": [
+    "dovehomemod.mixins.json",
+    "dovehomemod-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.6",
+    "minecraft": ">=1.19.2"
+  }
+}

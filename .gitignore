@@ -7,6 +7,7 @@ src/main/gen
 
 # idea ignored
 .idea/
+**/rootmaven/
 
 dataOut/libraries/
 dataOut/logs/

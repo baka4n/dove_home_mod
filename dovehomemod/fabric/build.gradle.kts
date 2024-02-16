@@ -1,4 +1,3 @@
-import org.gradle.jvm.component.internal.DefaultJvmSoftwareComponent
 
 architectury {
     platformSetupLoomIde()

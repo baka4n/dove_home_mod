@@ -4,7 +4,7 @@
 src/main/gen
 
 *.log
-
+*.hprof
 # idea ignored
 .idea/
 **/rootmaven/

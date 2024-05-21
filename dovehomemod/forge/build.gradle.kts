@@ -24,7 +24,7 @@ configurations {
     developmentForge.extendsFrom(common)
 }
 
-var commonString = ":${project.name.split("-")[0]}-common"
+var commonString = ":${project.name.substring(0, project.name.lastIndexOf("-"))}-common"
 
 dependencies {
     forge("net.minecraftforge:forge:${libs.versions.minecraft.version.get()}-${libs.versions.forge.version.get()}")

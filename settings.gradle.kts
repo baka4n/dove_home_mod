@@ -17,6 +17,7 @@ includeBuild("plugin")
 
 
 val doveprojects: String by settings
+
 doveprojects
     .split(",")
     .forEach {

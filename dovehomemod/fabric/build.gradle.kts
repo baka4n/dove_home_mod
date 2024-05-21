@@ -14,7 +14,7 @@ configurations {
     developmentFabric.extendsFrom(common)
 }
 
-var commonString = ":${project.name.split("-")[0]}-common"
+var commonString = ":${project.name.substring(0, project.name.lastIndexOf("-"))}-common"
 
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${libs.versions.fabric.loader.version.get()}")

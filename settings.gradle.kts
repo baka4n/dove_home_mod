@@ -14,9 +14,7 @@ pluginManagement {
 }
 
 includeBuild("plugin")
-includeBuild("creative-generation") {
-    this.name = "creative_generation"
-}
+
 
 val doveprojects: String by settings
 doveprojects

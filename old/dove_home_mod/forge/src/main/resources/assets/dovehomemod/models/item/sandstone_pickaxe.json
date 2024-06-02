@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "dovehomemod:item/sandstone_pickaxe"
-  }
-}

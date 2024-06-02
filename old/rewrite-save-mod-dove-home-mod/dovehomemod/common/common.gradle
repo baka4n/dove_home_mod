@@ -1,7 +1,0 @@
-dependencies {
-    modImplementation(libs.bakalib.common)
-    modApi(libs.resourceful.config.common)
-    modImplementation(libs.kubejs.fabric)
-    modCompileOnly(libs.geckolib.fabric)
-    modCompileOnly(libs.create.fabric)
-}

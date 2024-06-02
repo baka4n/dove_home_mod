@@ -1,4 +1,0 @@
-accessWidener v1 named
-extendable class net/minecraft/client/renderer/block/model/ItemTransform$Deserializer
-extendable class net/minecraft/client/renderer/block/model/ItemTransforms$Deserializer
-accessible field net/minecraft/client/resources/model/ModelManager bakedRegistry Ljava/util/Map;

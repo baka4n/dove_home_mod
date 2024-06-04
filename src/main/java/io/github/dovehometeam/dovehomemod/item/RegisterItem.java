@@ -1,12 +1,8 @@
 package io.github.dovehometeam.dovehomemod.item;
 
-import io.github.dovehometeam.dovehomemod.Dovehomemod;
 import io.github.dovehometeam.dovehomemod.ModTiers;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.PickaxeItem;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;

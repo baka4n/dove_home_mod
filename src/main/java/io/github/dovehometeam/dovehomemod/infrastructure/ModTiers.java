@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod;
+package io.github.dovehometeam.dovehomemod.infrastructure;
 
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyLoadedValue;

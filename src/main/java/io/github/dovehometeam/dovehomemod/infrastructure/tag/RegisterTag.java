@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.tag;
+package io.github.dovehometeam.dovehomemod.infrastructure.tag;
 
 import io.github.dovehometeam.dovehomemod.Dovehomemod;
 import net.minecraft.resources.ResourceLocation;
@@ -8,8 +8,10 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.Locale;
 
-public enum RegisterTag {
-    ;
+public class RegisterTag {
+    public static void init() {
+        Blocks.init();
+    }
     public enum Blocks {
         NEEDS_SAND_TOOL;
         public final TagKey<Block> block;
@@ -19,5 +21,14 @@ public enum RegisterTag {
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(Dovehomemod.MODID, name));
         }
+
+
+        public TagKey<Block> get() {
+            return block;
+        }
+        public static void init() {
+
+        }
+
     }
 }

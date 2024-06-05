@@ -1,6 +1,6 @@
-package io.github.dovehometeam.dovehomemod.item;
+package io.github.dovehometeam.dovehomemod.infrastructure.item;
 
-import io.github.dovehometeam.dovehomemod.ModTiers;
+import io.github.dovehometeam.dovehomemod.infrastructure.ModTiers;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,5 +23,5 @@ public enum RegisterItem implements Supplier<Item> {
         return t.get();
     }
 
-    public static void init(){}
+    public static void init() {}
 }

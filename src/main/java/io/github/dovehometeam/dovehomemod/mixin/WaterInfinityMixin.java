@@ -1,6 +1,6 @@
 package io.github.dovehometeam.dovehomemod.mixin;
 
-import io.github.dovehometeam.dovehomemod.Config;
+import io.github.dovehometeam.dovehomemod.infrastructure.Config;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.WaterFluid;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,5 +1,6 @@
-package io.github.dovehometeam.dovehomemod;
+package io.github.dovehometeam.dovehomemod.infrastructure;
 
+import io.github.dovehometeam.dovehomemod.Dovehomemod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;

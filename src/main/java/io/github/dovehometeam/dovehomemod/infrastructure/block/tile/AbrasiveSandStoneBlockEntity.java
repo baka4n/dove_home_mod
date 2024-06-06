@@ -13,6 +13,19 @@ import org.jetbrains.annotations.NotNull;
 public class AbrasiveSandStoneBlockEntity extends BlockEntity implements IBlockEntity {
     private int done;
 
+    public int getDone() {
+        return done;
+    }
+
+    public int addDone() {
+        this.done++;
+        return done;
+    }
+
+    public int addDone(int done) {
+        this.done+=done;
+        return done;
+    }
 
     @Override
     protected void saveAdditional(@NotNull CompoundTag pTag) {

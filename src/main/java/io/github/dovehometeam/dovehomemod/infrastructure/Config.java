@@ -24,7 +24,7 @@ public class Config
     public static final ForgeConfigSpec.BooleanValue noInfiniteWater = BUILDER.comment("No Infinite Water").define("NoInfiniteWater", true);
 
 
-    static final ForgeConfigSpec SPEC = BUILDER.build();
+    public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean noInfiniteWaterBoolean;
 

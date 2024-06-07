@@ -100,7 +100,7 @@ public class AbrasiveSandStoneBlock extends BaseEntityBlock {
                 CompoundTag tag = mainHand.getOrCreateTag();
                 CompoundTag blockEntityData = tag.contains("BlockEntityTag") ? tag.getCompound("BlockEntityTag") : new CompoundTag();
                 if (!tag.contains("BlockEntityTag")) tag.put("BlockEntityTag", blockEntityData);
-                blockEntityData.putInt("done", blockEntityData.getInt("done") + (entity.getDone()!=0 ? ((entity.getDone() / 5) + 1) : 1));
+                blockEntityData.putInt("done", blockEntityData.getInt("done") + (entity.getDone()!=0 ? ((entity.getDone() / 20) + 1) : 1));
             }
 
         }

@@ -1,12 +1,11 @@
 package io.github.dovehometeam.dovehomemod.infrastructure.block.tile;
 
 import io.github.dovehometeam.dovehomemod.auxiliary.IBlockEntity;
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlock;
+import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,7 +40,7 @@ public class AbrasiveSandStoneBlockEntity extends BlockEntity implements IBlockE
 
 
     public AbrasiveSandStoneBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(RegisterBlock.RegisterType.abrasive_sand_stone.get(), pPos, pBlockState);
+        super(RegisterTile.abrasive_sand_stone.get(), pPos, pBlockState);
     }
 
     public static <T extends AbrasiveSandStoneBlockEntity> void tick(Level world, BlockPos pos, BlockState state, BlockEntity blockEntity) {

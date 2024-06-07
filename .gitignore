@@ -2,6 +2,8 @@
 **/build/
 !src/**/build/
 src/main/gen
+src/generated
+run-data
 
 *.log
 *.hprof

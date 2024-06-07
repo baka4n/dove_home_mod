@@ -18,12 +18,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Random;
 
 import static io.github.dovehometeam.dovehomemod.Dovehomemod.ran;
 
@@ -36,7 +34,7 @@ public class AbrasiveSandStoneBlock extends BaseEntityBlock {
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos blockPos,
                                       @NotNull BlockState blockState) {
-        return RegisterBlock.RegisterType.abrasive_sand_stone.get().create(blockPos, blockState);
+        return RegisterTile.abrasive_sand_stone.get().create(blockPos, blockState);
     }
 
     @Nullable
@@ -44,7 +42,7 @@ public class AbrasiveSandStoneBlock extends BaseEntityBlock {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level pLevel,
                                                                   @NotNull BlockState pState,
                                                                   @NotNull BlockEntityType<T> pBlockEntityType) {
-        return pLevel.isClientSide() ? null : createTickerHelper(pBlockEntityType, RegisterBlock.RegisterType.abrasive_sand_stone.get(), AbrasiveSandStoneBlockEntity::tick);
+        return pLevel.isClientSide() ? null : createTickerHelper(pBlockEntityType, RegisterTile.abrasive_sand_stone.get(), AbrasiveSandStoneBlockEntity::tick);
     }
 
     @SuppressWarnings("deprecation")
@@ -75,17 +73,17 @@ public class AbrasiveSandStoneBlock extends BaseEntityBlock {
         }
     }
 
-    @Override
-    public void appendHoverText(@NotNull ItemStack pStack,
-                                @Nullable BlockGetter pLevel,
-                                @NotNull List<Component> pTooltip,
-                                @NotNull TooltipFlag pFlag) {
-        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
-        CompoundTag blockEntityData = BlockItem.getBlockEntityData(pStack);
-        if (blockEntityData != null) {
-            pTooltip.add(Component.empty().append(Component.translatable("dovehomemod.abrasive.value")).append(String.valueOf(blockEntityData.getInt("done"))));
-        }
-    }
+//    @Override
+//    public void appendHoverText(@NotNull ItemStack pStack,
+//                                @Nullable BlockGetter pLevel,
+//                                @NotNull List<Component> pTooltip,
+//                                @NotNull TooltipFlag pFlag) {
+//        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
+//        CompoundTag blockEntityData = BlockItem.getBlockEntityData(pStack);
+//        if (blockEntityData != null) {
+//            pTooltip.add(Component.empty().append(Component.translatable("dovehomemod.abrasive.value")).append(String.valueOf(blockEntityData.getInt("done"))));
+//        }
+//    }
 
     @SuppressWarnings("deprecation")
     @Override
@@ -95,26 +93,16 @@ public class AbrasiveSandStoneBlock extends BaseEntityBlock {
                        @NotNull Player pPlayer) {
         super.attack(pState, pLevel, pPos, pPlayer);
         ItemStack mainHand = pPlayer.getItemInHand(InteractionHand.MAIN_HAND);
-        if (mainHand.is(RegisterBlock.RegisterItem.abrasive_sand_stone.get())) {
-            if (pState.hasBlockEntity()) {
-                BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-                if (!mainHand.hasTag())
-                    mainHand.setTag(new CompoundTag());
-                if (blockEntity instanceof AbrasiveSandStoneBlockEntity entity) {
-                    if (ran.nextInt(0, 30) <= 2) {
-                        CompoundTag blockEntityData = BlockItem.getBlockEntityData(mainHand);
-                        if (blockEntityData == null) {
-                            entity.saveToItem(mainHand);
-                        } else {
-                            blockEntityData.putInt("done",  blockEntityData.getInt("done")+entity.getDone());
-                            mainHand.removeTagKey("BlockEntityTag");
-                            mainHand.addTagElement("BlockEntityTag", blockEntityData);
-                        }
 
-                    }
-                }
-
+        if (ran.nextInt(0, 60) <= 2) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof AbrasiveSandStoneBlockEntity entity) {
+                CompoundTag tag = mainHand.getOrCreateTag();
+                CompoundTag blockEntityData = tag.contains("BlockEntityTag") ? tag.getCompound("BlockEntityTag") : new CompoundTag();
+                if (!tag.contains("BlockEntityTag")) tag.put("BlockEntityTag", blockEntityData);
+                blockEntityData.putInt("done", blockEntityData.getInt("done") + (entity.getDone()!=0 ? ((entity.getDone() / 5) + 1) : 1));
             }
+
         }
     }
 }

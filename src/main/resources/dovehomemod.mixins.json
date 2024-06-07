@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "dovehomemod.refmap.json",
   "mixins": [
+    "PickaxeMixin",
+    "ToolTipMixin",
     "WaterInfinityMixin"
   ],
   "client": [

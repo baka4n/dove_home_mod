@@ -1,6 +1,8 @@
 package io.github.dovehometeam.dovehomemod;
 
 import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlock;
+import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlockItem;
+import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterTile;
 import io.github.dovehometeam.dovehomemod.infrastructure.item.RegisterItem;
 import io.github.dovehometeam.dovehomemod.infrastructure.tag.RegisterTag;
 import net.minecraft.world.item.Item;
@@ -19,8 +21,8 @@ public class AllRegistry {
     public static void init(IEventBus modEventBus) {
         RegisterTag.init();
         RegisterBlock.init();
-        RegisterBlock.RegisterType.init();
-        RegisterBlock.RegisterItem.init();
+        RegisterTile.init();
+        RegisterBlockItem.init();
         RegisterItem.init();
         blocks.register(modEventBus);
         entityTypes.register(modEventBus);

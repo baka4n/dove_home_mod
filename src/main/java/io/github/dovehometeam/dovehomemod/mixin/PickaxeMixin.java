@@ -2,28 +2,27 @@ package io.github.dovehometeam.dovehomemod.mixin;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(PickaxeItem.class)
-public abstract class PickaxeMixin extends DiggerItem {
-
-
-    public PickaxeMixin(float pAttackDamageModifier, float pAttackSpeedModifier, Tier pTier, TagKey<Block> pBlocks, Properties pProperties) {
-        super(pAttackDamageModifier, pAttackSpeedModifier, pTier, pBlocks, pProperties);
-    }
-
-    @Override
-    public float getDestroySpeed(@NotNull ItemStack pStack,
-                                 @NotNull BlockState pState) {
+@Debug(export = true)
+@Mixin(DiggerItem.class)
+public abstract class PickaxeMixin {
+    @Inject(method = "getDestroySpeed", at=@At("RETURN"), cancellable = true)
+    protected void getDestroySpeed(ItemStack pStack, BlockState pState, CallbackInfoReturnable<Float> cir) {
         CompoundTag blockEntityData = BlockItem.getBlockEntityData(pStack);
-        float destroySpeed = super.getDestroySpeed(pStack, pState);
+        float destroySpeed = cir.getReturnValue();
         if (blockEntityData != null) {
-            destroySpeed += (float) blockEntityData.getInt("done") / 10;
+            destroySpeed += (float) blockEntityData.getInt("done") / 20;
         }
-        return destroySpeed;
+        cir.setReturnValue(destroySpeed);
     }
 }

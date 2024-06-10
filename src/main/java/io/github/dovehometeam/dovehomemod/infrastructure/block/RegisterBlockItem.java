@@ -1,6 +1,5 @@
 package io.github.dovehometeam.dovehomemod.infrastructure.block;
 
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,5 +22,7 @@ public enum RegisterBlockItem implements Supplier<Item> {
         return t.get();
     }
 
-    public static void init() {}
+    public static void init() {
+
+    }
 }

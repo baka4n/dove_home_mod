@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import io.github.dovehometeam.dovehomemod.db.DoveSQL;
 import io.github.dovehometeam.dovehomemod.infrastructure.Config;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.level.storage.loot.LootDataManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;

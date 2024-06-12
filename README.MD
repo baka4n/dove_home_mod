@@ -11,6 +11,6 @@
   - 丹药待添加
     - 聚气丹(Awaken charge pellet)
     - 辟谷丹(Grain avoidance pellet)
-    - 筑基丹(Foundation)
+    - 筑基丹(Foundation pellet)
   - 灵草待添加
   - 武器待添加

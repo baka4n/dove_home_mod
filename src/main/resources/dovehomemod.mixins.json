@@ -6,6 +6,7 @@
   "refmap": "dovehomemod.refmap.json",
   "mixins": [
     "PickaxeMixin",
+    "RemoveAllRecipeMixin",
     "ToolTipMixin",
     "WaterInfinityMixin"
   ],

@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.infrastructure.block;
+package io.github.dovehometeam.dovehomemod.infrastructure.registry;
 
 import com.mojang.datafixers.DSL;
 import io.github.dovehometeam.dovehomemod.infrastructure.block.tile.AbrasiveSandStoneBlockEntity;

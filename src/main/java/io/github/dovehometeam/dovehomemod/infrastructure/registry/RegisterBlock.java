@@ -1,5 +1,6 @@
-package io.github.dovehometeam.dovehomemod.infrastructure.block;
+package io.github.dovehometeam.dovehomemod.infrastructure.registry;
 
+import io.github.dovehometeam.dovehomemod.infrastructure.block.AbrasiveSandStoneBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;

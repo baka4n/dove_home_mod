@@ -2,7 +2,6 @@ package io.github.dovehometeam.dovehomemod.datagen.lang;
 
 import io.github.dovehometeam.dovehomemod.Dovehomemod;
 import io.github.dovehometeam.dovehomemod.auxiliary.IGenPut;
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

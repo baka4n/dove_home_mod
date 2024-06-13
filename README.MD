@@ -8,9 +8,11 @@
 - 添加了修仙体系 2024/6/10 20:39
   - 凶兽待添加
   - 灵兽待添加
-  - 丹药待添加
+  - 丹药
+    - 基础类已建成 品级颜色已定义 2024/6/13 21:50
     - 聚气丹(Awaken charge pellet)
     - 辟谷丹(Grain avoidance pellet)
     - 筑基丹(Foundation pellet)
   - 灵草待添加
   - 武器待添加
+- 配方除了本mod和kubejs的和crafttweaker的其余全部移除 2024/6/13 21:52

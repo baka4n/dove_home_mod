@@ -3,14 +3,11 @@ package io.github.dovehometeam.dovehomemod.datagen;
 import io.github.dovehometeam.dovehomemod.Dovehomemod;
 import io.github.dovehometeam.dovehomemod.datagen.lang.DefaultLangGen;
 import io.github.dovehometeam.dovehomemod.datagen.lang.ZhCnLangGen;
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlock;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = Dovehomemod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DovehomemodDatagen {

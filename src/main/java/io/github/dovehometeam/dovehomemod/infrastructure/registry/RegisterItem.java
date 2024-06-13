@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.infrastructure.item;
+package io.github.dovehometeam.dovehomemod.infrastructure.registry;
 
 import io.github.dovehometeam.dovehomemod.infrastructure.ModTiers;
 import net.minecraft.world.item.Item;

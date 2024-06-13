@@ -12,20 +12,19 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.LocalTime;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
 
 import static com.mojang.text2speech.Narrator.LOGGER;
 
 public class DoveSQL {
 
-    static final Map<String,DoveEntity> entities = new HashMap<>();//uuid entry
+    static final ConcurrentHashMap<String,DoveEntity> entities = new ConcurrentHashMap<>();//uuid entry
+    static final AtomicReference<Path> uuids = new AtomicReference<>();//存储物品uuid是否使用过
     static final AtomicInteger time = new AtomicInteger();
 
     @SubscribeEvent

@@ -1,7 +1,7 @@
 package io.github.dovehometeam.dovehomemod.infrastructure.block.tile;
 
 import io.github.dovehometeam.dovehomemod.auxiliary.IBlockEntity;
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterTile;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;

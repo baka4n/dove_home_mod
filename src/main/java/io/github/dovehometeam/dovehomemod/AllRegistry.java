@@ -1,10 +1,10 @@
 package io.github.dovehometeam.dovehomemod;
 
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlock;
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterBlockItem;
-import io.github.dovehometeam.dovehomemod.infrastructure.block.RegisterTile;
-import io.github.dovehometeam.dovehomemod.infrastructure.item.RegisterItem;
-import io.github.dovehometeam.dovehomemod.infrastructure.tag.RegisterTag;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterBlock;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterBlockItem;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterTile;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterItem;
+import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterTag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;

@@ -3,8 +3,6 @@ package io.github.dovehometeam.dovehomemod;
 import com.mojang.logging.LogUtils;
 import io.github.dovehometeam.dovehomemod.db.DoveSQL;
 import io.github.dovehometeam.dovehomemod.infrastructure.Config;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.level.storage.loot.LootDataManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -17,10 +15,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Random;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Dovehomemod.MODID)
 public class Dovehomemod {
 
@@ -28,7 +26,7 @@ public class Dovehomemod {
     public static final String MODID = "dovehomemod";
     public static final Random ran = new Random();
     // Directly reference a slf4j logger
-    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LoggerFactory.getLogger("[%s]: ".formatted(MODID));
 
     public Dovehomemod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -69,9 +67,7 @@ public class Dovehomemod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
         }
     }
 }

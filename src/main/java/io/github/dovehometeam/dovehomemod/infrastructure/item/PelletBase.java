@@ -1,5 +1,6 @@
 package io.github.dovehometeam.dovehomemod.infrastructure.item;
 
+import io.github.dovehometeam.dovehomemod.auxiliary.IPelletSettings;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
@@ -7,7 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import org.jetbrains.annotations.NotNull;
 
-public class PelletBase extends Item {
+public abstract class PelletBase extends Item implements IPelletSettings {
+
     public PelletBase(Properties pProperties) {
         super(pProperties.food(Foods.APPLE).fireResistant());
     }

@@ -15,4 +15,15 @@
     - 筑基丹(Foundation pellet)
   - 灵草待添加
   - 武器待添加
-- 配方除了本mod和kubejs的和crafttweaker的其余全部移除 2024/6/13 21:52
+- 配方除了本mod和kubejs的和crafttweaker的其余全部移除 [可配置] 2024/6/13 21:52
+
+# Config Example
+
+```toml
+#No Infinite Water
+NoInfiniteWater = true
+#Remove All Recipe Include Mod
+RemoveAllRecipeIncludeMod = "dovehomemod,kubejs,crafttweaker"
+#auto save sql
+AutoSaveSQL = 3000
+```

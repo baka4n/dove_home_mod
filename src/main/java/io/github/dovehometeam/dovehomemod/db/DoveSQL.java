@@ -1,5 +1,6 @@
 package io.github.dovehometeam.dovehomemod.db;
 
+import io.github.dovehometeam.dovehomemod.infrastructure.Config;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.storage.LevelResource;
@@ -56,7 +57,7 @@ public class DoveSQL {
     @SubscribeEvent
     public static void tick(TickEvent.ServerTickEvent event) {
         time.getAndAdd(1);
-        if (time.get() > 3000) {
+        if (time.get() > Config.autoSaveSQL) {
             autoSave(createDir(event.getServer()));
             LOGGER.info("save to dove data");
             time.set(0);

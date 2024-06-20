@@ -17,18 +17,20 @@ public class Config
 
     public static final ForgeConfigSpec.BooleanValue noInfiniteWater = BUILDER.comment("No Infinite Water").define("NoInfiniteWater", true);
     public static final ForgeConfigSpec.ConfigValue<String> removeAllRecipeIncludeMod = BUILDER.comment("Remove All Recipe Include Mod").define("RemoveAllRecipeIncludeMod", "dovehomemod,kubejs,crafttweaker");
+    public static final ForgeConfigSpec.ConfigValue<Integer> autoSaveSql = BUILDER.comment("auto save sql").define("AutoSaveSQL", 3000);
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
 
     public static boolean noInfiniteWaterBoolean;
     public static List<String> includeModidRemoveRecipe;
+    public static int autoSaveSQL;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
        noInfiniteWaterBoolean = noInfiniteWater.get();
        includeModidRemoveRecipe = Arrays.stream(removeAllRecipeIncludeMod.get().split(",")).toList();
-        // convert the list of strings into a set of items
+       autoSaveSQL = autoSaveSql.get();
 
 
     }

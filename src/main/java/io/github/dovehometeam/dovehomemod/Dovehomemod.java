@@ -2,7 +2,9 @@ package io.github.dovehometeam.dovehomemod;
 
 import com.mojang.logging.LogUtils;
 import io.github.dovehometeam.dovehomemod.db.DoveSQL;
+import io.github.dovehometeam.dovehomemod.event.DoveChunkTeamEvent;
 import io.github.dovehometeam.dovehomemod.infrastructure.Config;
+import io.github.dovehometeam.dovehomemod.miner.MinerConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -43,11 +45,16 @@ public class Dovehomemod {
         eventBus.addListener(DoveSQL::playerJoinServer);
         eventBus.addListener(DoveSQL::tick);
 
+        eventBus.addListener(DoveChunkTeamEvent::breakBlock);
+        eventBus.addListener(DoveChunkTeamEvent::placeBlock);
+        eventBus.addListener(DoveChunkTeamEvent::trampleFarmland);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MinerConfig.SPEC, "dovehomemod-miner-common.toml");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

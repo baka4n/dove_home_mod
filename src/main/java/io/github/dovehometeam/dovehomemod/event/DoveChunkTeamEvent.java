@@ -9,12 +9,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Map;
 
 public class DoveChunkTeamEvent {
+    //玩家放置，破坏方块
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void breakBlock(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
@@ -34,14 +36,22 @@ public class DoveChunkTeamEvent {
         }
     }
 
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void placeBlock(BlockEvent.EntityPlaceEvent event) {
-        Entity entity = event.getEntity();
+        canceledAll(event.getEntity(), event.getPos(),event.getLevel(), event);
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void trampleFarmland(BlockEvent.FarmlandTrampleEvent event) {
+        canceledAll(event.getEntity(), event.getPos(),event.getLevel(), event);
+
+    }
+
+    private static void canceledAll(Entity entity, BlockPos pos, LevelAccessor level, Event event) {
         if (entity instanceof Player player) {
             if (player.hasPermissions(4)) {
                 return;
             }
-            BlockPos pos = event.getPos();
-            LevelAccessor level = event.getLevel();
             ChunkPos pos1 = level.getChunk(pos).getPos();
             final DoveTeamEntity.TeamChunkPos tcp = new DoveTeamEntity.TeamChunkPos(pos1.x, pos1.z);
             DoveEntity doveEntity = DoveSQL.entities.get(player.getStringUUID());
@@ -50,4 +60,6 @@ public class DoveChunkTeamEvent {
             }
         }
     }
+
+
 }

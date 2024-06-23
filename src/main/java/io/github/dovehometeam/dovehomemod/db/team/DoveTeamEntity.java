@@ -40,41 +40,23 @@ public class DoveTeamEntity implements Serializable {
         return Objects.hash(name, players, level, claimChunk, loaderClaimChunk);
     }
 
-    public static class TeamChunkPos implements Serializable {
-        @Serial
-        private static final long serialVersionUID = -3982942337350664027L;
-        public final int x, z;
-
-        public TeamChunkPos(int x, int z) {
-            this.x = x;
-            this.z = z;
-        }
+    public record TeamChunkPos(int x, int z) implements Serializable {
+            @Serial
+            private static final long serialVersionUID = -3982942337350664027L;
 
         @Override
-        public String toString() {
-            return "TeamChunkPos{" +
-                    "x=" + x +
-                    ", z=" + z +
-                    '}';
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            TeamChunkPos that = (TeamChunkPos) o;
-            return x == that.x && z == that.z;
-        }
+            public String toString() {
+                return "TeamChunkPos{" +
+                        "x=" + x +
+                        ", z=" + z +
+                        '}';
+            }
 
         public boolean is(ChunkPos pos) {
-            return x == pos.x && z == pos.z;
-        }
+                return x == pos.x && z == pos.z;
+            }
 
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, z);
-        }
     }
 
 

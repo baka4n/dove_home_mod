@@ -1,8 +1,8 @@
 .gradle
 **/build/
-!src/**/build/
-src/main/gen
-src/generated
+!dovehome/src/**/build/
+dovehome/src/main/gen
+dovehome/src/generated
 run-data
 
 *.log

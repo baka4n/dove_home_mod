@@ -1,0 +1,3 @@
+dependencies {
+    implementation fg.deobf("teamtwilight:twilightforest:${teamtwilight_version}:universal")
+}

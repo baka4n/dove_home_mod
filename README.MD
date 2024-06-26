@@ -55,8 +55,20 @@
     - 6 钓鱼进度条 [无] 神级钓竿，可能会有意想不到的作用
 
 # package name
-db    - 数据存档
-miner - 连锁
+| 模块名         | 说明          | 前置   | 前置  | 前置    | 前置  | 前置   | 前置    | 联动           |
+|:-----------:|:-----------:|:----:|:---:|:-----:|:---:|:----:|:-----:|:------------:|
+| lib         | 库           | none |     |       |     |      |       | none         |
+| db          | 数据存档        | none |     |       |     |      |       | none         |
+| permissions | 权限组         | db   |     |       |     |      |       | none         |
+| miner       | 连锁          | db   |     |       |     |      |       | permissions  |
+| god         | 修仙          | db   |     |       |     |      |       | permissions  |
+| datagen     | data生成和资源生成 | none |     |       |     |      |       | none         |
+| team        | 组队          | db   |     |       |     |      |       | permissions  |
+| quest       | 任务书         | db   |     |       |     |      |       | permissions  |
+| map         | 地图          | db   |     |       |     |      |       | permissions  |
+| query       | 查询          | db   |     |       |     |      |       | permissions  |
+| command     | 命令          | db   |     |       |     |      |       | permissions  |
+| dovehome    | 本体          | db   | lib | miner | god | team | quest | permissions  |
 
 # Config Example
 

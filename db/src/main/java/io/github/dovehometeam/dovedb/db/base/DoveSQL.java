@@ -22,10 +22,10 @@ public class DoveSQL extends BaseSQL {
 
     @Override
     public void serverStarting(ServerStartingEvent event) {
-        value().set(new ConcurrentHashMap<>());
-        load(event.getServer(), "dove-sql", value().get());
-        
+        directory.set(createDir(event.getServer(),"dove", "base"));
+        entities.set(new ConcurrentHashMap<>());
     }
+
 
     @Override
     public void playerJoinServer(PlayerEvent.PlayerLoggedInEvent event) {
@@ -38,7 +38,7 @@ public class DoveSQL extends BaseSQL {
     }
 
     @Override
-    public void serverStopped(ServerStoppedEvent event) {
+    public void olayerLevelServer(PlayerEvent.PlayerLoggedInEvent event) {
 
     }
 }

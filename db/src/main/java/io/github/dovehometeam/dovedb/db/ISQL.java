@@ -5,7 +5,6 @@ import net.minecraft.world.level.storage.LevelResource;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
-import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.io.IOException;
@@ -78,5 +77,5 @@ public interface ISQL {
     void tick(TickEvent.ServerTickEvent event);
 
     @SubscribeEvent
-    void serverStopped(ServerStoppedEvent event);
+    void olayerLevelServer(PlayerEvent.PlayerLoggedInEvent event);
 }

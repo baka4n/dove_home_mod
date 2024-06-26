@@ -25,14 +25,7 @@ public class DoveChunkTeamEvent {
         BlockPos pos = event.getPos();
         LevelAccessor level = event.getLevel();
         ChunkPos pos1 = level.getChunk(pos).getPos();
-        for (Map.Entry<String, DoveTeamEntity> entry : DoveSQL.teamEntities.entrySet()) {
-            DoveTeamEntity doveTeamEntity = entry.getValue();
-            for (DoveTeamEntity.TeamChunkPos teamChunkPos : doveTeamEntity.claimChunk) {
-                if (teamChunkPos.is(pos1) && !doveTeamEntity.players.contains(player.getUUID().toString())) {
-                    event.setCanceled(true);
-                }
-            }
-        }
+
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
@@ -53,10 +46,6 @@ public class DoveChunkTeamEvent {
             }
             ChunkPos pos1 = level.getChunk(pos).getPos();
             final DoveTeamEntity.TeamChunkPos tcp = new DoveTeamEntity.TeamChunkPos(pos1.x, pos1.z);
-            DoveEntity doveEntity = DoveSQL.entities.get(player.getStringUUID());
-            if (!doveEntity.hasPlayerTeamClaimTcp(player, tcp)) {
-                event.setCanceled(true);
-            }
         }
     }
 

@@ -15,23 +15,4 @@ public class DoveEntity extends IEntity<DoveEntity> {
     public BFLevel bfLevel;//体修属性
     public static final ConcurrentHashMap<String, LinkedList<DoveTeamEntity.TeamChunkPos>> playerTeamClaimTcp = new ConcurrentHashMap<>();
 
-    public boolean hasPlayerTeamClaimTcp(Player player, DoveTeamEntity.TeamChunkPos pos) {
-        String uuid = player.getStringUUID();
-        if (!DoveSQL.tcpList.contains(pos))
-            return true;
-        if (!playerTeamClaimTcp.containsKey(uuid)) return false;
-        return playerTeamClaimTcp.get(uuid).contains(pos);
-    }
-
-
-    @SuppressWarnings("UnusedReturnValue")
-    public static DoveEntity getAndCreate(String uuid) {
-        if (DoveSQL.entities.containsKey(uuid))
-            return DoveSQL.entities.get(uuid);
-        DoveEntity doveEntity = new DoveEntity();
-        doveEntity.imcLevel = IMCLevel.defaultIMC();
-        doveEntity.bfLevel = BFLevel.defaultBF();
-        DoveSQL.entities.put(uuid, doveEntity);
-        return doveEntity;
-    }
 }

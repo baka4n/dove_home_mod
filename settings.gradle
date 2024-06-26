@@ -13,9 +13,11 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
 }
 
-rootProject.name = 'dove'
+rootProject.name = 'dove-modules'
 
 include("dovehome")
 include("db")
+include("god")
 project(":dovehome").name = "dovehomemod"
 project(":db").name = "dovedb"
+project(":god").name = "god"

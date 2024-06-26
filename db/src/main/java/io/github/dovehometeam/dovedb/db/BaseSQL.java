@@ -4,12 +4,11 @@ import java.nio.file.Path;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
-public abstract class BaseSQL implements ISQL {
-    protected final AtomicReference<ConcurrentHashMap<String, ? extends IEntity<?>>> entities = new AtomicReference<>();
+public abstract class BaseSQL<T extends IEntity<T>> implements ISQL<T> {
+    protected final AtomicReference<ConcurrentHashMap<String, T>> entities = new AtomicReference<>();
     protected final AtomicReference<Path> directory = new AtomicReference<>();
 
-    @Override
-    public AtomicReference<ConcurrentHashMap<String, ? extends IEntity<?>>> value() {
+    public AtomicReference<ConcurrentHashMap<String, T>> value() {
         return entities;
     }
 

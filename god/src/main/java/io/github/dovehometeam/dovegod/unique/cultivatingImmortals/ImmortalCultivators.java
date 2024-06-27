@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.unique.cultivatingImmortals;
+package io.github.dovehometeam.dovegod.unique.cultivatingImmortals;
 
 import java.io.Serial;
 import java.io.Serializable;

@@ -20,4 +20,4 @@ include("db")
 include("god")
 project(":dovehome").name = "dovehomemod"
 project(":db").name = "dovedb"
-project(":god").name = "god"
+project(":god").name = "dovegod"

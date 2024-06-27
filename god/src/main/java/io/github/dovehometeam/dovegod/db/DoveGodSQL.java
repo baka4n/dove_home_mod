@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovedb.db.base;
+package io.github.dovehometeam.dovegod.db;
 
 import io.github.dovehometeam.dovedb.config.BaseConfig;
 import io.github.dovehometeam.dovedb.db.BaseSQL;
@@ -9,26 +9,23 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.event.server.ServerStoppedEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.concurrent.ConcurrentHashMap;
 
 @OnlyIn(value = Dist.DEDICATED_SERVER)
-public class DoveSQL extends BaseSQL<DoveEntity> {
+public class DoveGodSQL extends BaseSQL<DoveGodEntity> {
 
-    public int time;
-
+    private int time;
 
     @Override
+    @SubscribeEvent
     public void serverStarting(ServerStartingEvent event) {
-        directory.set(createDir(event.getServer(),"dove", "base"));
+        directory.set(createDir(event.getServer(),"dove", "god"));
         entities.set(new ConcurrentHashMap<>());
     }
-
 
     @SuppressWarnings("resource")
     @Override
@@ -38,11 +35,11 @@ public class DoveSQL extends BaseSQL<DoveEntity> {
         Level level = player.level();
         if (level.isClientSide())
             return;
-        DoveEntity.getOrCreate(player, directory.get(), value().get());
+        DoveGodEntity.getOrCreate(player, directory.get(), value().get());
     }
 
     @Override
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    @SubscribeEvent
     public void tick(TickEvent.ServerTickEvent event) {
         time++;
         if (time >= BaseConfig.autoSaveSQL) {
@@ -58,6 +55,7 @@ public class DoveSQL extends BaseSQL<DoveEntity> {
     }
 
     @Override
+    @SubscribeEvent
     public void serverStopped(ServerStoppedEvent event) {
         ISQL.autoSave(directory.get(), entities.get());
     }

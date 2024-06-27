@@ -1,6 +1,6 @@
 package io.github.dovehometeam.dovehomemod.infrastructure.item;
 
-import io.github.dovehometeam.dovehomemod.auxiliary.IPelletSettings;
+import io.github.dovehometeam.dovegod.auxiliary.IPelletSettings;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;

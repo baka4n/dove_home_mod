@@ -12,10 +12,12 @@ import net.minecraftforge.fml.config.ModConfig;
 public class DoveDB {
     public static final String MODID = "dovedb";
 
+    public static final DoveSQL baseSql = new DoveSQL();
+
     public DoveDB() {
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaseConfig.SPEC);
         IEventBus forge = MinecraftForge.EVENT_BUS;
-        forge.register(new DoveSQL());
+        forge.register(baseSql);
     }
 }

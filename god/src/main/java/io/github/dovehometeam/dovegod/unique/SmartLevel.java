@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.unique;
+package io.github.dovehometeam.dovegod.unique;
 
 import java.io.Serial;
 import java.io.Serializable;

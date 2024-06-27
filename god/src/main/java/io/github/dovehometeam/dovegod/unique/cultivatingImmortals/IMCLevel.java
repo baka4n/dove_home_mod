@@ -1,8 +1,8 @@
-package io.github.dovehometeam.dovehomemod.unique.cultivatingImmortals;
+package io.github.dovehometeam.dovegod.unique.cultivatingImmortals;
 
-import io.github.dovehometeam.dovehomemod.auxiliary.IPelletSettings;
-import io.github.dovehometeam.dovehomemod.unique.SmartLevel;
-import io.github.dovehometeam.dovehomemod.Dovehomemod;
+import io.github.dovehometeam.dovegod.DoveGod;
+import io.github.dovehometeam.dovegod.auxiliary.IPelletSettings;
+import io.github.dovehometeam.dovegod.unique.SmartLevel;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -33,8 +33,8 @@ public class IMCLevel implements Serializable {
         IMCLevel imcLevel = new IMCLevel();
         imcLevel.caste = ImmortalCultivators.laic;
         imcLevel.level = SmartLevel.JIA;
-        imcLevel.impurity = BigDecimal.valueOf(Dovehomemod.ran.nextDouble(0.0, 1.0));
-        imcLevel.aqua_value = new BigDecimal(Dovehomemod.ran.nextInt(0, 10));
+        imcLevel.impurity = BigDecimal.valueOf(DoveGod.ran.nextDouble(0.0, 1.0));
+        imcLevel.aqua_value = new BigDecimal(DoveGod.ran.nextInt(0, 10));
         ConcurrentHashMap<String, BigDecimal> drug = new ConcurrentHashMap<>();
         for (Map.Entry<ResourceKey<Item>, Item> entry : ForgeRegistries.ITEMS.getEntries()) {
             if (entry.getValue() instanceof IPelletSettings) {

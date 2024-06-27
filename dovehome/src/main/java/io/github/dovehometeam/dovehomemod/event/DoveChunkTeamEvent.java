@@ -1,6 +1,5 @@
 package io.github.dovehometeam.dovehomemod.event;
 
-import io.github.dovehometeam.dovehomemod.db.DoveEntity;
 import io.github.dovehometeam.dovehomemod.db.team.DoveTeamEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -11,8 +10,6 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import java.util.Map;
 
 public class DoveChunkTeamEvent {
     //玩家放置，破坏方块

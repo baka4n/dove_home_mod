@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.unique.bodyForgers;
+package io.github.dovehometeam.dovegod.unique.bodyForgers;
 
 import io.github.dovehometeam.dovehomemod.unique.SmartLevel;
 

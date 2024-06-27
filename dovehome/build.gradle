@@ -4,4 +4,5 @@ for (final def f in ["ae2", "botania","create","immersive","jei","mek","twilight
 
 dependencies {
     implementation project(":dovedb")
+    implementation project(":dovegod")
 }

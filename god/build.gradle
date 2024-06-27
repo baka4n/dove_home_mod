@@ -1,3 +1,5 @@
+//修仙模组依赖存放处
 dependencies {
     implementation project(":dovedb")
 }
+

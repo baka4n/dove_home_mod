@@ -1,6 +1,8 @@
 package io.github.dovehometeam.dovegod.unique.bodyForgers;
 
-import io.github.dovehometeam.dovehomemod.unique.SmartLevel;
+
+
+import io.github.dovehometeam.dovegod.unique.SmartLevel;
 
 import java.io.Serial;
 import java.io.Serializable;

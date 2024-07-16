@@ -1,4 +1,7 @@
 import net.minecraftforge.gradle.common.util.MinecraftExtension
+import org.csveed.annotations.CsvHeaderName
+import org.csveed.api.CsvClient
+import org.csveed.api.CsvClientImpl
 import org.spongepowered.asm.gradle.plugins.MixinExtension
 import java.util.*
 
@@ -12,6 +15,7 @@ buildscript {
     }
     dependencies {
         classpath("org.spongepowered:mixingradle:0.7-SNAPSHOT")
+        classpath("org.csveed:csveed:0.8.1")
     }
 }
 
@@ -26,6 +30,36 @@ val modVersion: String by rootProject
 val mappingChannel: String by rootProject
 val mappingVersion: String by rootProject
 val modAuthors: String by rootProject
+val minecraftVersion: String by rootProject
+val minecraftVersionRange: String by rootProject
+val forgeVersion: String by rootProject
+val forgeVersionRange: String by rootProject
+val modName: String by rootProject
+val loaderVersionRange: String by rootProject
+val modLicense: String by rootProject
+val modDescription: String by rootProject
+
+val modList = file("整合包Mod列表 - 1.20.1.csv")
+
+class Bean {
+    var `mod-name`: String? = null
+    var `english-name`: String? = null
+    var description: String? = null
+    var `mod-label`: String? = null
+    var `is-client`: Int = 0
+    var `mcmod-url`: String? = null
+    var `project-id`: String? = null
+    var source: String? = null
+    var `download-id`: String? = null
+}
+
+modList.bufferedReader(Charsets.UTF_8).use {
+    val csvClient = CsvClientImpl<Bean>(it)
+    val beans = csvClient.readBeans()
+    for (bean in beans) {
+        println(bean.`mod-name`)
+    }
+}
 
 subprojects {
     apply(plugin = "net.minecraftforge.gradle")
@@ -112,26 +146,25 @@ subprojects {
             finalizedBy( "reobfJar")
         }
 
-        named<ProcessResources>()
+        named<ProcessResources>("processResources") {
+            val replaceProperties = mapOf(
+                "minecraft_version" to minecraftVersion,
+                "minecraft_version_range" to minecraftVersionRange,
+                "forge_version" to forgeVersion,
+                "forge_version_range" to forgeVersionRange,
+                "loader_version_range" to loaderVersionRange,
+                "mod_id" to project.name,
+                "mod_name" to modName,
+                "mod_license" to modLicense,
+                "mod_version" to modVersion,
+                "mod_authors" to modAuthors,
+                "mod_description" to modDescription,
+            )
+            inputs.properties(replaceProperties)
+            filesMatching(listOf("MTEA-INF/mods.toml", "pack.mcmeta")) {
+                expand (replaceProperties)
+                expand(mapOf("project" to project))
+            }
+        }
     }
 }
-
-//subprojects {
-
-//    tasks.named('processResources', ProcessResources).configure {
-//        var replaceProperties = [
-//                minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-//                forge_version: forge_version, forge_version_range: forge_version_range,
-//                loader_version_range: loader_version_range,
-//                mod_id: project.name, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-//                mod_authors: mod_authors, mod_description: mod_description,
-//        ]
-//
-//        inputs.properties replaceProperties
-//
-//        filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-//            expand replaceProperties + [project: project]
-//        }
-//    }
-//}
-//

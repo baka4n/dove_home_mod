@@ -39,7 +39,7 @@ val loaderVersionRange: String by rootProject
 val modLicense: String by rootProject
 val modDescription: String by rootProject
 
-val modList = file("整合包Mod列表 - 1.20.1.csv")
+val modList = file("modlist-1.20.1.csv")
 
 class Bean {
     var `mod-name`: String? = null

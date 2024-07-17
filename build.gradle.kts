@@ -1,9 +1,9 @@
+import cn.hutool.core.annotation.Alias
+import cn.hutool.core.text.csv.CsvReadConfig
+import cn.hutool.core.text.csv.CsvUtil
 import net.minecraftforge.gradle.common.util.MinecraftExtension
-import org.csveed.annotations.CsvHeaderName
-import org.csveed.api.CsvClient
-import org.csveed.api.CsvClientImpl
 import org.spongepowered.asm.gradle.plugins.MixinExtension
-import java.util.*
+import java.util.LinkedList
 
 buildscript {
     repositories {
@@ -15,7 +15,7 @@ buildscript {
     }
     dependencies {
         classpath("org.spongepowered:mixingradle:0.7-SNAPSHOT")
-        classpath("org.csveed:csveed:0.8.1")
+        classpath("cn.hutool:hutool-all:5.8.29")
     }
 }
 
@@ -23,6 +23,43 @@ plugins {
     id("net.minecraftforge.gradle").version("[6.0.16,6.2)").apply(false)
     id("org.parchmentmc.librarian.forgegradle").version("1.+").apply(false)
     java
+}
+
+class CsvRead {
+    var modName: String? = null
+    var englishName: String? = null
+    var description: String? = null
+    var modLabel: String? = null
+    var isClient: Boolean? = null
+    var mcmodUrl: String? = null
+    var projectId: String? = null
+    var source: String? = null
+    var downloadId: String? = null
+}
+var read: LinkedList<CsvRead> = LinkedList()
+file("modlist-1.20.1.csv").bufferedReader(Charsets.UTF_8).use {
+    val csvRead =
+        CsvUtil.getReader(
+            it,
+            CsvReadConfig()
+                .setSkipEmptyRows(true)
+                .setContainsHeader(true)
+                .setTrimField(true)
+        ).read()
+    csvRead.rows.forEach {row ->
+        val csv = CsvRead()
+        csv.modName = row.getByName("modName")
+        csv.englishName = row.getByName("englishName")
+        csv.description = row.getByName("description")
+        csv.modLabel = row.getByName("modLabel")
+        csv.isClient = row.getByName("isClient").toBoolean()
+        csv.mcmodUrl = row.getByName("mcmodUrl")
+        csv.projectId = row.getByName("projectId")
+        csv.source = row.getByName("source")
+        csv.downloadId = row.getByName("downloadId")
+        read.add(csv)
+    }
+    it.close()
 }
 
 val modGroupId: String by rootProject
@@ -38,28 +75,6 @@ val modName: String by rootProject
 val loaderVersionRange: String by rootProject
 val modLicense: String by rootProject
 val modDescription: String by rootProject
-
-val modList = file("modlist-1.20.1.csv")
-
-class Bean {
-    var `mod-name`: String? = null
-    var `english-name`: String? = null
-    var description: String? = null
-    var `mod-label`: String? = null
-    var `is-client`: Int = 0
-    var `mcmod-url`: String? = null
-    var `project-id`: String? = null
-    var source: String? = null
-    var `download-id`: String? = null
-}
-
-modList.bufferedReader(Charsets.UTF_8).use {
-    val csvClient = CsvClientImpl<Bean>(it)
-    val beans = csvClient.readBeans()
-    for (bean in beans) {
-        println(bean.`mod-name`)
-    }
-}
 
 subprojects {
     apply(plugin = "net.minecraftforge.gradle")

@@ -25,6 +25,7 @@ public class AllRegistry {
         blocks = DeferredRegister.create(ForgeRegistries.BLOCKS, DoveGod.MODID);
         items = DeferredRegister.create(ForgeRegistries.ITEMS, DoveGod.MODID);
         tiles = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, DoveGod.MODID);
+
     }
 
     public static void registerAll(IEventBus mod) {

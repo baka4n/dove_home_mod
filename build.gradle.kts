@@ -1,9 +1,9 @@
-import cn.hutool.core.annotation.Alias
 import cn.hutool.core.text.csv.CsvReadConfig
 import cn.hutool.core.text.csv.CsvUtil
+import de.undercouch.gradle.tasks.download.Download
 import net.minecraftforge.gradle.common.util.MinecraftExtension
 import org.spongepowered.asm.gradle.plugins.MixinExtension
-import java.util.LinkedList
+import java.util.*
 
 buildscript {
     repositories {
@@ -23,6 +23,8 @@ plugins {
     id("net.minecraftforge.gradle").version("[6.0.16,6.2)").apply(false)
     id("org.parchmentmc.librarian.forgegradle").version("1.+").apply(false)
     java
+
+    id("de.undercouch.download").version("5.6.0")
 }
 
 class CsvRead {
@@ -34,7 +36,7 @@ class CsvRead {
     var mcmodUrl: String? = null
     var projectId: String? = null
     var source: String? = null
-    var downloadId: String? = null
+    var version: String? = null
 }
 var read: LinkedList<CsvRead> = LinkedList()
 file("modlist-1.20.1.csv").bufferedReader(Charsets.UTF_8).use {
@@ -56,7 +58,7 @@ file("modlist-1.20.1.csv").bufferedReader(Charsets.UTF_8).use {
         csv.mcmodUrl = row.getByName("mcmodUrl")
         csv.projectId = row.getByName("projectId")
         csv.source = row.getByName("source")
-        csv.downloadId = row.getByName("downloadId")
+        csv.version = row.getByName("version")
         read.add(csv)
     }
     it.close()
@@ -75,6 +77,54 @@ val modName: String by rootProject
 val loaderVersionRange: String by rootProject
 val modLicense: String by rootProject
 val modDescription: String by rootProject
+
+
+tasks {
+    val downloadCMCL = create<Download>("downloadCMCL") {
+        dest(file("cmcl.jar"))
+        src("https://github.com/MrShieh-X/console-minecraft-launcher/releases/download/2.2.1/cmcl.jar")
+    }
+    val taskDownloadClient = create<Exec>("downloadMinecraftClient") {
+        commandLine(
+            if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
+            "/c","java", "-Dfile.encoding=UTF-8", "-jar", "cmcl.jar",
+            "install", minecraftVersion,
+            "-n", "dovehomemodpacks", "-s", "--forge=${forgeVersion}"
+        )
+    }
+
+    build {
+        dependsOn(downloadCMCL, taskDownloadClient)
+    }
+
+    read.forEachIndexed { index, it ->
+        when(it.source) {
+            "cf", "mr" -> {
+                val tasksDownload = create<Exec>("downloadNo%03d".format(index)) {
+                    setGroup("download")
+                    commandLine(
+                        if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
+                        "/c","java", "-Dfile.encoding=UTF-8", "-jar", "cmcl.jar", "mod", "--install",
+                        "--source=${it.source}",
+                        "--id=${it.projectId}",
+                        "--game-version=${minecraftVersion}",
+                        "--version=${it.version}"
+                    )
+                }
+                build {
+                    dependsOn(tasksDownload)
+                }
+            }
+        }
+
+    }
+
+
+
+}
+
+
+
 
 subprojects {
     apply(plugin = "net.minecraftforge.gradle")

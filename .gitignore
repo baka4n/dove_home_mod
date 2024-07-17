@@ -4,6 +4,11 @@
 dovehome/src/main/gen
 dovehome/src/generated
 run-data
+cmcl.json
+cmcl.jar
+
+.minecraft/
+.cmcl/
 
 *.log
 *.hprof

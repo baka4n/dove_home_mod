@@ -127,11 +127,11 @@ JS操作库,Rhino,,LIB,0,https://www.mcmod.cn/class/3821.html,416294,cf,rhino-fo
 ,Cloth Config API,,LIB,0,https://www.mcmod.cn/class/2346.html,348521,cf,cloth-config-11.1.118-forge.jar
 ,BDLib,,LIB,0,https://www.mcmod.cn/class/676.html,70496,cf,bdlib-1.27.0.8-mc1.20.1.jar
 ,Scalable Cat's Force,,LIB,0,https://www.mcmod.cn/class/2896.html,320926,cf,ScalableCatsForce-3.3.1-build-0-with-library.jar
-,,,,0,,,,
-,,,,0,,,,
-,,,,0,,,,
-,,,,0,,,,
-,,,,0,,,,
+,Kotlin for Forge,,LIB,0,https://www.mcmod.cn/class/2890.html,351264,cf,kotlinforforge-4.11.0-all.jar
+,AlchemyLib,,LIB,0,https://www.mcmod.cn/class/1937.html,293426,cf,alchemylib-1.20.1-1.0.30.jar
+,ChemLib,,LIB,0,https://www.mcmod.cn/class/2089.html,340666,cf,chemlib-1.20.1-2.0.19.jar
+,Collective,,LIB,0,https://www.mcmod.cn/class/2652.html,342584,cf,collective-1.20.1-7.71.jar
+,FTB Library,,LIB,0,https://www.mcmod.cn/class/3184.html,404465,cf,ftb-library-forge-2001.2.2.jar
 ,,,,0,,,,
 ,,,,0,,,,
 ,,,,0,,,,

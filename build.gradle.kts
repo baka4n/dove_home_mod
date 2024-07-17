@@ -102,14 +102,23 @@ tasks {
             "cf", "mr" -> {
                 val tasksDownload = create<Exec>("downloadNo%03d".format(index)) {
                     setGroup("download")
-                    commandLine(
-                        if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
-                        "/c","java", "-Dfile.encoding=UTF-8", "-jar", "cmcl.jar", "mod", "--install",
-                        "--source=${it.source}",
-                        "--id=${it.projectId}",
-                        "--game-version=${minecraftVersion}",
-                        "--version=${it.version}"
-                    )
+                    var modPath = file(".minecraft/mods/${it.version}")
+                    if (modPath.exists().not()) {
+                        commandLine(
+                            if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
+                            "/c","java", "-Dfile.encoding=UTF-8", "-jar", "cmcl.jar", "mod", "--install",
+                            "--source=${it.source}",
+                            "--id=${it.projectId}",
+                            "--game-version=${minecraftVersion}",
+                            "--version=${it.version}"
+                        )
+                    } else {
+                        commandLine(
+                            if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
+                            "/c"
+                        )
+                    }
+
                 }
                 build {
                     dependsOn(tasksDownload)

@@ -3,6 +3,8 @@ import cn.hutool.core.text.csv.CsvUtil
 import de.undercouch.gradle.tasks.download.Download
 import net.minecraftforge.gradle.common.util.MinecraftExtension
 import org.spongepowered.asm.gradle.plugins.MixinExtension
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 import java.util.*
 
 buildscript {
@@ -195,8 +197,10 @@ subprojects {
 
     apply(from = rootProject.file("gradle/repositories.gradle.kts"))
 
+
+
     sourceSets.main.configure {
-        resources.srcDirs("src/generated/resources", "../src/main/resources")
+        resources.srcDirs("src/generated/resources")
         resources.exclude(".cache/")
     }
 
@@ -208,7 +212,11 @@ subprojects {
         archivesName = project.name
     }
 
-
+    val resource = rootProject.file("src/main/resources")
+    val someResource = file("src/main/resources")
+    if (someResource.exists().not()) {
+        resource.copyRecursively(someResource)
+    }
 
     apply(from = rootProject.file("gradle/dependenciesPath/minecraft.gradle.kts"))
     apply(from = rootProject.file("gradle/dependenciesPath/annotation.gradle"))
@@ -244,8 +252,8 @@ subprojects {
             )
             inputs.properties(replaceProperties)
             filesMatching(listOf("META-INF/mods.toml", "pack.mcmeta")) {
-                expand (replaceProperties)
-                expand(mapOf("project" to project))
+                expand(replaceProperties)
+
             }
         }
     }

@@ -24,6 +24,7 @@ public class DoveSQL extends BaseSQL<DoveEntity> {
 
 
     @Override
+    @SubscribeEvent
     public void serverStarting(ServerStartingEvent event) {
         directory.set(createDir(event.getServer(),"dove", "base"));
         entities.set(new ConcurrentHashMap<>());
@@ -58,6 +59,7 @@ public class DoveSQL extends BaseSQL<DoveEntity> {
     }
 
     @Override
+    @SubscribeEvent
     public void serverStopped(ServerStoppedEvent event) {
         ISQL.autoSave(directory.get(), entities.get());
     }

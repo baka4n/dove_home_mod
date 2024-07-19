@@ -17,7 +17,6 @@ public class DoveDB {
     public DoveDB() {
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaseConfig.SPEC);
-        IEventBus forge = MinecraftForge.EVENT_BUS;
-        forge.register(baseSql);
+        baseSql.registry(MinecraftForge.EVENT_BUS);
     }
 }

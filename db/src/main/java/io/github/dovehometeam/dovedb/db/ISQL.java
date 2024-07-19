@@ -7,6 +7,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.event.server.ServerStoppedEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.io.IOException;
@@ -76,4 +77,8 @@ public interface ISQL<T extends IEntity<T>> {
 
     @SubscribeEvent
     void serverStopped(ServerStoppedEvent event);
+
+    default void registry(IEventBus eventBus) {
+        eventBus.register(this);
+    }
 }

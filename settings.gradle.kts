@@ -30,6 +30,7 @@ include("quest")
 include("map")
 include("query")
 include("command")
+include("viafix")
 project(":lib").name = "dovelib"
 project(":dovehome").name = "dovehomemod"
 project(":db").name = "dovedb"
@@ -42,3 +43,4 @@ project(":quest").name = "dovequest"
 project(":map").name = "dovemap"
 project(":query").name = "dovequery"
 project(":command").name = "dovecommand"
+project(":viafix").name = "doveviafix"

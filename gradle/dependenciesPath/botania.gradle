@@ -1,4 +1,4 @@
 dependencies {
-    compileOnly fg.deobf("vazkii.botania:Botania:${minecraft_version}-${botania_version}:api")
-    runtimeOnly fg.deobf("vazkii.botania:Botania:${minecraft_version}-${botania_version}")
+    compileOnly fg.deobf("vazkii.botania:Botania:${minecraftVersion}-${botania_version}:api")
+    runtimeOnly fg.deobf("vazkii.botania:Botania:${minecraftVersion}-${botania_version}")
 }

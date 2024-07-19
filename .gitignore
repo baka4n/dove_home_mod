@@ -6,9 +6,12 @@ dovehome/src/generated
 run-data
 cmcl.json
 cmcl.jar
-
+hmcl.jar
+hmcl.json
+hmcl.log
 .minecraft/
 .cmcl/
+
 
 *.log
 *.hprof
@@ -48,3 +51,4 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+dove_home_modpacks.zip

@@ -66,8 +66,8 @@ file("modlist-1.20.1.csv").bufferedReader(Charsets.UTF_8).use {
 
 val modGroupId: String by rootProject
 val modVersion: String by rootProject
-val mappingChannel: String by rootProject
-val mappingVersion: String by rootProject
+val mappingChannel1: String by rootProject
+val mappingVersion1: String by rootProject
 val modAuthors: String by rootProject
 val minecraftVersion: String by rootProject
 val minecraftVersionRange: String by rootProject
@@ -79,12 +79,21 @@ val modLicense: String by rootProject
 val modDescription: String by rootProject
 
 
+
 tasks {
     val downloadCMCL = create<Download>("downloadCMCL") {
+        setGroup("dove")
         dest(file("cmcl.jar"))
         src("https://github.com/MrShieh-X/console-minecraft-launcher/releases/download/2.2.1/cmcl.jar")
     }
+    val downloadHMCL = create<Download>("downloadHMCL") {
+        setGroup("dove")
+        dest(file("hmcl.jar"))
+        src("https://github.com/HMCL-dev/HMCL/releases/download/v3.5.8.249/HMCL-3.5.8.249.jar")
+    }
     val taskDownloadClient = create<Exec>("downloadMinecraftClient") {
+        dependsOn(downloadCMCL, downloadHMCL)
+        setGroup("dove")
         commandLine(
             if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
             "/c","java", "-Dfile.encoding=UTF-8", "-jar", "cmcl.jar",
@@ -93,16 +102,15 @@ tasks {
         )
     }
 
-    build {
-        dependsOn(downloadCMCL, taskDownloadClient)
-    }
+
 
     read.forEachIndexed { index, it ->
         when(it.source) {
             "cf", "mr" -> {
                 val tasksDownload = create<Exec>("downloadNo%03d".format(index)) {
-                    setGroup("download")
-                    var modPath = file(".minecraft/mods/${it.version}")
+                    dependsOn(taskDownloadClient)
+                    setGroup("dove/download")
+                    val modPath = file(".minecraft/mods/${it.version}")
                     if (modPath.exists().not()) {
                         commandLine(
                             if (System.getProperty("os.name").lowercase(Locale.ROOT).contains("windows")) "cmd" else "sh",
@@ -133,8 +141,6 @@ tasks {
 }
 
 
-
-
 subprojects {
     apply(plugin = "net.minecraftforge.gradle")
     apply(plugin = "org.parchmentmc.librarian.forgegradle")
@@ -145,27 +151,9 @@ subprojects {
     group = modGroupId
     version = modVersion
 
-    java {
-        toolchain.languageVersion = JavaLanguageVersion.of(17)
-    }
-
-    apply(from = rootProject.file("gradle/repositories.gradle"))
-
-    sourceSets.main.configure {
-        resources.srcDirs("src/generated/resources")
-        resources.exclude(".cache/")
-    }
-
-    tasks.withType<JavaCompile>().configureEach {
-        options.encoding = "UTF-8"
-    }
-
-    base {
-        archivesName = project.name
-    }
-
     configure<MinecraftExtension> {
-        mappings(mappingChannel, mappingVersion)
+
+        mappings(mappingChannel1, mappingVersion1)
         copyIdeResources = true
         accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
         runs {
@@ -202,7 +190,28 @@ subprojects {
         config("${project.name}.mixins.json}")
     }
 
-    apply(from = rootProject.file("gradle/dependenciesPath/minecraft.gradle"))
+    java {
+        toolchain.languageVersion = JavaLanguageVersion.of(17)
+    }
+
+    apply(from = rootProject.file("gradle/repositories.gradle.kts"))
+
+    sourceSets.main.configure {
+        resources.srcDirs("src/generated/resources")
+        resources.exclude(".cache/")
+    }
+
+    tasks.withType<JavaCompile>().configureEach {
+        options.encoding = "UTF-8"
+    }
+
+    base {
+        archivesName = project.name
+    }
+
+
+
+    apply(from = rootProject.file("gradle/dependenciesPath/minecraft.gradle.kts"))
     apply(from = rootProject.file("gradle/dependenciesPath/annotation.gradle"))
     tasks {
         named<Jar>("jar").configure {
@@ -242,3 +251,4 @@ subprojects {
         }
     }
 }
+

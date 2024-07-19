@@ -18,9 +18,9 @@ plugins {
 
 rootProject.name = "dove-modules"
 
-//include("dovehome")
-//include("db")
-//include("god")
-//project(":dovehome").name = "dovehomemod"
-//project(":db").name = "dovedb"
-//project(":god").name = "dovegod"
+include("dovehome")
+include("db")
+include("god")
+project(":dovehome").name = "dovehomemod"
+project(":db").name = "dovedb"
+project(":god").name = "dovegod"

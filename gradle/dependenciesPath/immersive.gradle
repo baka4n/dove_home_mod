@@ -1,4 +1,4 @@
 dependencies {
-    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${minecraft_version}-${immersive_version}")
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${minecraftVersion}-${immersive_version}")
 
 }

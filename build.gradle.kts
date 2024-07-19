@@ -78,8 +78,6 @@ val loaderVersionRange: String by rootProject
 val modLicense: String by rootProject
 val modDescription: String by rootProject
 
-
-
 tasks {
     val downloadCMCL = create<Download>("downloadCMCL") {
         setGroup("dove")
@@ -185,9 +183,10 @@ subprojects {
             }
         }
     }
+
     configure<MixinExtension> {
         add(sourceSets.main.get(), "${project.name}.refmap.json")
-        config("${project.name}.mixins.json}")
+        config("${project.name}.mixins.json")
     }
 
     java {
@@ -197,7 +196,7 @@ subprojects {
     apply(from = rootProject.file("gradle/repositories.gradle.kts"))
 
     sourceSets.main.configure {
-        resources.srcDirs("src/generated/resources")
+        resources.srcDirs("src/generated/resources", "../src/main/resources")
         resources.exclude(".cache/")
     }
 
@@ -244,7 +243,7 @@ subprojects {
                 "mod_description" to modDescription,
             )
             inputs.properties(replaceProperties)
-            filesMatching(listOf("MTEA-INF/mods.toml", "pack.mcmeta")) {
+            filesMatching(listOf("META-INF/mods.toml", "pack.mcmeta")) {
                 expand (replaceProperties)
                 expand(mapOf("project" to project))
             }

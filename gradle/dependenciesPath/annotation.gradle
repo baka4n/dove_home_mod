@@ -1,5 +1,0 @@
-dependencies {
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    annotationProcessor 'org.projectlombok:lombok:1.18.32'
-    compileOnly 'org.projectlombok:lombok:1.18.32'
-}

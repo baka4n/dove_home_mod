@@ -69,7 +69,7 @@
 |    query    |    查询     |  db  |     |       |     |      |       | permissions |
 |   command   |    命令     |  db  |     |       |     |      |       | permissions |
 |  dovehome   |    本体     |  db  | lib | miner | god | team | quest | permissions |
-| doveviafix  | 原版修复原版修改  |      |     |       |
+|   viafix    | 原版修复原版修改  |      |     |       |
 
 # Config Example
 

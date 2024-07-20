@@ -5,6 +5,7 @@ pluginManagement {
             name = "MinecraftForge"
             url = uri("https://maven.minecraftforge.net/")
         }
+
         maven {
             name = "ParchmentMC"
             url = uri("https://maven.parchmentmc.org")
@@ -17,7 +18,6 @@ plugins {
 }
 
 rootProject.name = "dove-modules"
-
 include("lib")
 include("dovehome")
 include("db")

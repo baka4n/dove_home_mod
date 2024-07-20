@@ -48,7 +48,6 @@ public class Dovehomemod {
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MinerConfig.SPEC, "dovehomemod-miner-common.toml");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

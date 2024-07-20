@@ -1,13 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.github.dovehometeam.dovehomemod.mixin",
+  "package": "io.github.dovehometeam.doveviafix.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "dovehomemod.refmap.json",
+  "refmap": "doveviafix.refmap.json",
   "mixins": [
-    "PickaxeMixin",
-    "RemoveAllRecipeMixin",
-    "ToolTipMixin"
+    "WaterInfinityMixin"
   ],
   "client": [
   ],

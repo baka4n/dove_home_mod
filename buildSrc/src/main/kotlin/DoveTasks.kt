@@ -1,5 +1,7 @@
 
 import org.gradle.api.tasks.TaskProvider
+import org.gradle.api.tasks.bundling.Jar
+import org.gradle.kotlin.dsl.attributes
 import org.gradle.language.jvm.tasks.ProcessResources
 
 
@@ -22,4 +24,19 @@ fun TaskProvider<ProcessResources>.processResources(modSettings: ModSettings) = 
     filesMatching(listOf("META-INF/mods.toml", "pack.mcmeta")) {
         expand(replaceProperties)
     }
+}
+
+fun TaskProvider<Jar>.jar(modSettings: ModSettings) = configure {
+    manifest {
+        attributes(
+            "Specification-Title" to modSettings.modid,
+            "Specification-Vendor" to modSettings.authors,
+            "Specification-Version" to "1",
+            "Implementation-Title" to modSettings.modid,
+            "Implementation-Version" to project.tasks.named("jar", Jar::class.java).get().archiveVersion,
+            "Implementation-Vendor" to modSettings.authors,
+            // "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        )
+    }
+    finalizedBy( "reobfJar")
 }

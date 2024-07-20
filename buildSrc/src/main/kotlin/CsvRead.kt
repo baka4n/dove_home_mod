@@ -1,5 +1,6 @@
 import cn.hutool.core.text.csv.CsvReadConfig
 import cn.hutool.core.text.csv.CsvUtil
+import java.io.File
 import java.nio.file.Path
 import java.util.*
 import kotlin.io.path.bufferedReader
@@ -18,7 +19,7 @@ class CsvRead {
 
 var read: LinkedList<CsvRead> = LinkedList()
 
-fun Path.read() = bufferedReader(Charsets.UTF_8).use {
+fun File.read() = bufferedReader(Charsets.UTF_8).use {
     val csvRead =
         CsvUtil.getReader(
             it,

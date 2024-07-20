@@ -8,3 +8,13 @@ fun Project.copyResources() = run {
         rootResources.copyRecursively(resources)
     }
 }
+
+fun Project.autoGenMixinConfig(modSettings: ModSettings) = run {
+    val mixinConfig = file("src/main/resources/${modSettings.modid}.mixins.json")
+    if (mixinConfig.exists().not()) {
+        mixinConfig.bufferedWriter(Charsets.UTF_8).use {
+            it.write(modSettings.mixin())
+            it.close()
+        }
+    }
+}

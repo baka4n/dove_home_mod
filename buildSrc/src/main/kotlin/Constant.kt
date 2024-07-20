@@ -5,6 +5,10 @@ const val license = "MIT"
 const val forgeVersion= "47.3.0"
 const val mavenGroup = "io.github.dovehometeam"
 
-class Botania {
+object Minecraft {
+    const val channel = "parchment"
+    const val version = "2023.09.03-1.20.1"
+}
+object Botania {
 
 }

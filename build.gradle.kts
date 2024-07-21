@@ -1,5 +1,4 @@
-import net.minecraftforge.gradle.common.util.MinecraftExtension
-import org.spongepowered.asm.gradle.plugins.MixinExtension
+import net.minecraftforge.gradle.userdev.tasks.JarJar
 
 plugins {
     java
@@ -15,6 +14,10 @@ subprojects {
     apply(plugin = "org.spongepowered.mixin")
     apply(plugin = "eclipse")
     apply(plugin = "idea")
+
+    tasks.named<JarJar>("jarJar").configure {
+        enabled = true
+    }
 
     val modSettings = ModSettings.valueOf(project.name)
 
@@ -45,11 +48,6 @@ subprojects {
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"
     }
-
-//    base {
-//        archivesName.set(modSettings.modid)
-//    }
-
 
     minecraft()
     annotation()

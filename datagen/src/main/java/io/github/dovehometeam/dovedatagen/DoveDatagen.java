@@ -1,8 +1,9 @@
-package io.github.dovehometeam.dovehomemod.datagen;
+package io.github.dovehometeam.dovedatagen;
 
+import io.github.dovehometeam.dovedatagen.lang.DefaultLangGen;
+import io.github.dovehometeam.dovedatagen.lang.ZhCnLangGen;
 import io.github.dovehometeam.dovehomemod.Dovehomemod;
-import io.github.dovehometeam.dovehomemod.datagen.lang.DefaultLangGen;
-import io.github.dovehometeam.dovehomemod.datagen.lang.ZhCnLangGen;
+
 import io.github.dovehometeam.dovehomemod.infrastructure.registry.RegisterBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -10,7 +11,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Dovehomemod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class DovehomemodDatagen {
+public class DoveDatagen {
 
     @SubscribeEvent
     public static void datagen(GatherDataEvent event) {

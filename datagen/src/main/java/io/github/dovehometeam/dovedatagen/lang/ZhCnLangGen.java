@@ -1,4 +1,4 @@
-package io.github.dovehometeam.dovehomemod.datagen.lang;
+package io.github.dovehometeam.dovedatagen.lang;
 
 import net.minecraft.data.PackOutput;
 

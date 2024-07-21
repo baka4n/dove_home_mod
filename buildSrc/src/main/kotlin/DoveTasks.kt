@@ -4,6 +4,9 @@ import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.kotlin.dsl.attributes
 import org.gradle.language.jvm.tasks.ProcessResources
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.Date
 
 
 @Suppress("UnstableApiUsage")
@@ -36,7 +39,8 @@ fun TaskProvider<Jar>.jar(modSettings: ModSettings) = configure {
             "Implementation-Title" to modSettings.modid,
             "Implementation-Version" to project.tasks.named("jar", Jar::class.java).get().archiveVersion,
             "Implementation-Vendor" to modSettings.authors,
-            // "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+            "Implementation-Timestamp" to LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"))
+
         )
     }
     finalizedBy( "reobfJar")

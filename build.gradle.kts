@@ -18,51 +18,15 @@ subprojects {
 
     val modSettings = ModSettings.valueOf(project.name)
 
-    group = mavenGroup
-    version = modSettings.version
-
-    configure<MinecraftExtension> {
-        mappings(Minecraft.channel, Minecraft.version)
-        copyIdeResources.set(true)
-        accessTransformer(file("src/main/resources/META-INF/accesstransformer.cfg"))
-        runs {
-            configureEach {
-                workingDirectory(file("run"))
-                property("forge.logging.markers", "REGISTRIES")
-                property("forge.logging.console.level", "debug")
-                mods {
-                    create(project.name) {
-                        source(sourceSets.main.get())
-                    }
-                }
-            }
-            create("client") {
-                property("forge.enabledGameTestNamespaces", project.name)
-            }
-            create("server") {
-
-                property("forge.enabledGameTestNamespaces", project.name)
-                args("--nogui")
-            }
-            create("gameTestServer") {
-                property("forge.enabledGameTestNamespaces", project.name)
-
-            }
-            create("data") {
-                workingDirectory(project.file("run-data"))
-                args("--mod", project.name, "--all", "--output", file("src/generated/resources/"), "--existing", file("src/main/resources/"))
-            }
-        }
-    }
-
+//    group = mavenGroup
+//    version = modSettings.version
+    named(modSettings)
+    initMinecraft(modSettings)
     copyResources()
     autoGenMixinConfig(modSettings)
 
+    initMixin(modSettings)
 
-    configure<MixinExtension> {
-        add(sourceSets.main.get(), "${modSettings.modid}.refmap.json")
-        config("${modSettings.modid}.mixins.json")
-    }
 
     java {
         toolchain.languageVersion.set(JavaLanguageVersion.of(17))
@@ -82,9 +46,9 @@ subprojects {
         options.encoding = "UTF-8"
     }
 
-    base {
-        archivesName.set(modSettings.modid)
-    }
+//    base {
+//        archivesName.set(modSettings.modid)
+//    }
 
 
     minecraft()

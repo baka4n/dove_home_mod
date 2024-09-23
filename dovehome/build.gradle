@@ -1,0 +1,6 @@
+//for (final def f in ["ae2", "botania","create","immersive","jei","mek","twilight"]) {
+//    apply from: rootProject.file("gradle/dependenciesPath/${f}.gradle")
+//}
+
+dependencies {
+}

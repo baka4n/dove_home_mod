@@ -1,0 +1,5 @@
+dependencies {
+    implementation fg.deobf("com.simibubi.create:create-${minecraftVersion}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraftVersion}:${flywheel_version}")
+}

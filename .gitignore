@@ -1,12 +1,24 @@
 .gradle
 **/build/
-!src/**/build/
-src/main/gen
+!dovehome/src/**/build/
+dovehome/src/main/gen
+dovehome/src/generated
+run-data
+cmcl.json
+cmcl.jar
+hmcl.jar
+hmcl.json
+hmcl.log
+.minecraft/
+.cmcl/
+h2/
+
 
 *.log
-
+*.hprof
 # idea ignored
 .idea/
+**/rootmaven/
 
 dataOut/libraries/
 dataOut/logs/
@@ -40,3 +52,4 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+dove_home_modpacks.zip

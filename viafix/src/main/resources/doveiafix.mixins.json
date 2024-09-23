@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.dovehometeam.doveviafix.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "doveviafix.refmap.json",
+  "mixins": [
+    "WaterInfinityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
